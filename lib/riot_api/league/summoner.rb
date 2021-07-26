@@ -4,7 +4,7 @@ require 'values'
 
 module RiotApi
   module League
-    class Summoner < RiotApi::Base
+    class Summoner < RiotApi::Adapter
 
       ATTRIBUTES = %i[
         account_id

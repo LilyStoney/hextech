@@ -5,7 +5,6 @@ require_relative 'riot_api/league/champions'
 require_relative 'riot_api/league/mastery'
 require_relative 'riot_api/league/patches'
 require_relative 'riot_api/league/summoner'
-require_relative 'riot_api/response'
 require_relative 'riot_api/version'
 
 module RiotApi

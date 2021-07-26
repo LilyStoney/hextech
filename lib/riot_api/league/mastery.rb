@@ -4,7 +4,7 @@ require 'values'
 
 module RiotApi
   module League
-    class Mastery < RiotApi::Base
+    class Mastery < RiotApi::Adapter
 
       ATTRIBUTES = %i[
         champion_id
