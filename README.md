@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You'll need the environment variable:
+
+```
+RIOT_API_KEY='code-goes-here'
+```
 
 ## Development
 

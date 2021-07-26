@@ -1,0 +1,12 @@
+AllCops:
+  TargetRubyVersion: 2.7.2
+  DisplayCopNames: true
+  StyleGuideCopsOnly: false
+Style/Documentation:
+  Enabled: false
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+  EnforcedStyle: empty_lines
+  Supportedstyles:
+    - empty_lines
+    - no_empty_lines
