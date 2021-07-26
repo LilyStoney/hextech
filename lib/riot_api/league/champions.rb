@@ -4,27 +4,22 @@ require 'open-uri'
 
 module RiotApi
   module League
-    class Champions
+    class Champions < RiotApi::Adapter
 
-      def import
-        champion_data['data'].each do |_champion, data|
-          stored_champion = Champion.find_or_create_by(riot_id: data['key'])
+      def initialize
+        @latest_patch = RiotApi::League::Patches.new.latest
+      end
 
-          stored_champion.update(
-            name: data['name'],
-            key: data['id'],
-            title: data['title'],
-            slug: data['name'].downcase,
-            role: data['tags'][0]
-          )
-        end
+      def call
+        send_request
       end
 
       private
 
-      def champion_data
-        @champion_data ||=
-          HTTParty.get("http://ddragon.leagueoflegends.com/cdn/#{RiotApi::Patches.latest}/data/en_US/champion.json")
+      attr_reader :latest_patch
+
+      def path
+        "https://ddragon.leagueoflegends.com/cdn/#{latest_patch}/data/en_US/champion.json"
       end
 
     end

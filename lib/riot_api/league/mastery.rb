@@ -18,7 +18,7 @@ module RiotApi
         tokens_earned
       ].freeze
 
-      def initialize(id:, region:)
+      def initialize(id:, region: 'euw1')
         @id = id
         @region = region
       end
@@ -34,10 +34,10 @@ module RiotApi
       attr_reader :id, :region
 
       def path
-        "champion-mastery/v4/champion-masteries/by-summoner/#{id}"
+        "https://#{region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/#{id}"
       end
 
-      class Response < Values.new(*RiotApi::League::Mastery::ATTRIBUTES); end
+      class Response < Value.new(*RiotApi::League::Mastery::ATTRIBUTES); end
 
     end
   end

@@ -16,7 +16,7 @@ module RiotApi
         summoner_level
       ].freeze
 
-      def initialize(name:, region:)
+      def initialize(name:, region: 'euw1')
         @name = name
         @region = region
       end
@@ -31,12 +31,12 @@ module RiotApi
 
       attr_reader :name, :region
 
-      def clean_name
-        ERB::Util.url_encode(name)
+      def path
+        "https://#{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/#{clean_name}"
       end
 
-      def path
-        "summoner/v4/summoners/by-name/#{clean_name}"
+      def clean_name
+        ERB::Util.url_encode(name)
       end
 
       class Response < Value.new(*RiotApi::League::Summoner::ATTRIBUTES); end

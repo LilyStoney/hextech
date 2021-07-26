@@ -6,8 +6,14 @@ module RiotApi
   module League
     class Patches < RiotApi::Adapter
 
-      def self.latest
-        JSON.parse(open('https://ddragon.leagueoflegends.com/api/versions.json')).first
+      def latest
+        send_request.first
+      end
+
+      private
+
+      def path
+        'https://ddragon.leagueoflegends.com/api/versions.json'
       end
 
     end

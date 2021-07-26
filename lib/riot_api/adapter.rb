@@ -11,14 +11,13 @@ module RiotApi
 
     end
 
-    def initialize(path:, region: 'euw1', params: {})
-      @path = path
-      @region = region
-      @params = params
-    end
+    def send_request
+      raise ApiKeyMissing if api_key.nil?
 
-    def call
-      response = send_request
+      response = HTTParty.get(
+        path,
+        { query: params.merge(api_key: api_key) }
+      )
 
       raise Forbidden if response.forbidden?
       raise ServerError if response.server_error?
@@ -28,15 +27,14 @@ module RiotApi
 
     private
 
-    attr_reader :path, :region, :params
+    def params
+      return @params if defined?(@params)
 
-    def send_api_request
-      raise ApiKeyMissing if api_key.blank?
+      {}
+    end
 
-      HTTParty.get(
-        "https://#{region}.api.riotgames.com/lol/#{path}",
-        { query: params.merge(api_key: api_key) }
-      )
+    def path
+      raise NotImplementedError, 'Missing path attribute'
     end
 
     def api_key
