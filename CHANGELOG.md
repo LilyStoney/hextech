@@ -10,7 +10,12 @@ All notable changes to this project will be documented in this file.
   - API
     - CHAMPION-MASTERY-V4
     - CHAMPION-V3
+    - LOL-STATUS-V4
     - SUMMONER-V4
+      - `ByAccountId`
+      - `ByPUUID`
+      - `BySummonerId`
+      - `BySummonerName`
   - CDN
     - Champion Information
     - Patch Information
