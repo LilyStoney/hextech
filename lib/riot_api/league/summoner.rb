@@ -1,44 +1,7 @@
 # frozen_string_literal: true
 
-module RiotApi
-  module League
-    class Summoner < RiotApi::Adapter
-
-      ATTRIBUTES = %i[
-        account_id
-        id
-        name
-        profile_icon_id
-        puuid
-        revision_date
-        summoner_level
-      ].freeze
-
-      def initialize(name:, region: 'euw1')
-        @name = name
-        @region = region
-      end
-
-      def call
-        response = send_request
-
-        Response.with(response.transform_keys { |key| key.underscore.to_sym })
-      end
-
-      private
-
-      attr_reader :name, :region
-
-      def path
-        "https://#{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/#{clean_name}"
-      end
-
-      def clean_name
-        ERB::Util.url_encode(name)
-      end
-
-      class Response < Value.new(*RiotApi::League::Summoner::ATTRIBUTES); end
-
-    end
-  end
-end
+require_relative 'summoner/base'
+require_relative 'summoner/by_account_id'
+require_relative 'summoner/by_puuid'
+require_relative 'summoner/by_summoner_id'
+require_relative 'summoner/by_summoner_name'
