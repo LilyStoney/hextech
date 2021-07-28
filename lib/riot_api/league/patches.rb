@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'open-uri'
-
 module RiotApi
   module League
     class Patches < RiotApi::Adapter

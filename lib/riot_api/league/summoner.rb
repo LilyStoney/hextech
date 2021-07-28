@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'values'
-
 module RiotApi
   module League
     class Summoner < RiotApi::Adapter
