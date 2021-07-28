@@ -6,19 +6,7 @@ module RiotApi
   module League
     class Champions < RiotApi::Adapter
 
-      ATTRIBUTES = %i[
-        blurb
-        id
-        image
-        info
-        key
-        name
-        partype
-        stats
-        tags
-        title
-        version
-      ].freeze
+      include RiotApi::League::ResponseAttributes
 
       def initialize
         @latest_patch = RiotApi::League::Patches.new.latest
@@ -27,7 +15,7 @@ module RiotApi
       def call
         response = send_request
 
-        response['data'].map { |_champion, data| Response.with(data.transform_keys { |key| key.underscore.to_sym }) }
+        response['data'].map { |_champion, data| Response.with(data.transform_keys { _1.underscore.to_sym }) }
       end
 
       private
@@ -38,7 +26,7 @@ module RiotApi
         "https://ddragon.leagueoflegends.com/cdn/#{latest_patch}/data/en_US/champion.json"
       end
 
-      class Response < Value.new(*RiotApi::League::Champions::ATTRIBUTES); end
+      class Response < Value.new(*ResponseAttributes::Champions::ATTRIBUTES); end
 
     end
   end

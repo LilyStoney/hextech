@@ -4,17 +4,7 @@ module RiotApi
   module League
     class Mastery < RiotApi::Adapter
 
-      ATTRIBUTES = %i[
-        champion_id
-        champion_level
-        champion_points
-        champion_points_since_last_level
-        champion_points_until_next_level
-        chest_granted
-        last_play_time
-        summoner_id
-        tokens_earned
-      ].freeze
+      include RiotApi::League::ResponseAttributes
 
       def initialize(id:, region: 'euw1')
         @id = id
@@ -24,7 +14,7 @@ module RiotApi
       def call
         response = send_request
 
-        response.map { |mastery| Response.with(mastery.transform_keys { |key| key.underscore.to_sym }) }
+        response.map { |mastery| Response.with(mastery.transform_keys { _1.underscore.to_sym }) }
       end
 
       private
@@ -35,7 +25,7 @@ module RiotApi
         "https://#{region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/#{id}"
       end
 
-      class Response < Value.new(*RiotApi::League::Mastery::ATTRIBUTES); end
+      class Response < Value.new(*ResponseAttributes::Mastery::ATTRIBUTES); end
 
     end
   end

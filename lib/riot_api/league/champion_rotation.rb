@@ -4,11 +4,7 @@ module RiotApi
   module League
     class ChampionRotation < RiotApi::Adapter
 
-      ATTRIBUTES = %i[
-        free_champion_ids
-        free_champion_ids_for_new_players
-        max_new_player_level
-      ].freeze
+      include RiotApi::League::ResponseAttributes
 
       def initialize(region: 'euw1')
         @region = region
@@ -17,7 +13,7 @@ module RiotApi
       def call
         response = send_request
 
-        Response.with(response.transform_keys { |key| key.underscore.to_sym })
+        Response.with(response.transform_keys { _1.underscore.to_sym })
       end
 
       private
@@ -28,7 +24,7 @@ module RiotApi
         "https://#{region}.api.riotgames.com/lol/platform/v3/champion-rotations"
       end
 
-      class Response < Value.new(*RiotApi::League::ChampionRotation::ATTRIBUTES); end
+      class Response < Value.new(*ResponseAttributes::ChampionRotation::ATTRIBUTES); end
 
     end
   end
