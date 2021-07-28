@@ -3,7 +3,9 @@
 module RiotApi
   module League
     module Summoner
-      class BySummonerName < Base
+      class BySummonerName < RiotApi::Adapter
+
+        include League::Summoner
 
         def initialize(name:, region: 'euw1')
           @name = name

@@ -3,7 +3,9 @@
 module RiotApi
   module League
     module Summoner
-      class ByPUUID < Base
+      class ByPUUID < RiotApi::Adapter
+
+        include League::Summoner
 
         def initialize(puuid:, region: 'euw1')
           @puuid = puuid
