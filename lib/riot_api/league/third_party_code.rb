@@ -16,7 +16,7 @@ module RiotApi
 
         raise ThirdPartyCodeError, 'There is no code for the given summoner or it expired' if response.not_found?
 
-        Response.with(third_party_code: response)
+        wrap_response(response)
       end
 
       private
@@ -25,6 +25,10 @@ module RiotApi
 
       def path
         "https://#{region}.api.riotgames.com/lol/platform/v4/third-party-code/by-summoner/#{summoner_id}"
+      end
+
+      def wrap_response(response)
+        Response.with(third_party_code: response)
       end
 
       class Response < Value.new(:third_party_code); end

@@ -13,6 +13,10 @@ module RiotApi
       def call
         response = send_request
 
+        wrap_response(response)
+      end
+
+      def wrap_response(response)
         Response.with(response.transform_keys { _1.underscore.to_sym })
       end
 

@@ -15,7 +15,7 @@ module RiotApi
       def call
         response = send_request
 
-        response['data'].map { |_champion, data| Response.with(data.transform_keys { _1.underscore.to_sym }) }
+        wrap_response(response)
       end
 
       private
@@ -24,6 +24,12 @@ module RiotApi
 
       def path
         "https://ddragon.leagueoflegends.com/cdn/#{latest_patch}/data/en_US/champion.json"
+      end
+
+      def wrap_response(response)
+        response['data'].map do |_champion, data|
+          Response.with(data.transform_keys { _1.underscore.to_sym })
+        end
       end
 
       class Response < Value.new(*ResponseAttributes::Champions::ATTRIBUTES); end

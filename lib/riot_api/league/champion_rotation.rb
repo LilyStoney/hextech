@@ -13,7 +13,7 @@ module RiotApi
       def call
         response = send_request
 
-        Response.with(response.transform_keys { _1.underscore.to_sym })
+        wrap_response(response)
       end
 
       private
@@ -22,6 +22,10 @@ module RiotApi
 
       def path
         "https://#{region}.api.riotgames.com/lol/platform/v3/champion-rotations"
+      end
+
+      def wrap_response(response)
+        Response.with(response.transform_keys { _1.underscore.to_sym })
       end
 
       class Response < Value.new(*ResponseAttributes::ChampionRotation::ATTRIBUTES); end

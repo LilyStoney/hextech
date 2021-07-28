@@ -8,6 +8,10 @@ module RiotApi
         send_request.first
       end
 
+      def previous
+        send_request.second
+      end
+
       private
 
       def path

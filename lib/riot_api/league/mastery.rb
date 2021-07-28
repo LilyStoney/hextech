@@ -14,7 +14,7 @@ module RiotApi
       def call
         response = send_request
 
-        response.map { |mastery| Response.with(mastery.transform_keys { _1.underscore.to_sym }) }
+        wrap_response(response)
       end
 
       private
@@ -23,6 +23,12 @@ module RiotApi
 
       def path
         "https://#{region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/#{id}"
+      end
+
+      def wrap_response(response)
+        response.map do |mastery|
+          Response.with(mastery.transform_keys { _1.underscore.to_sym })
+        end
       end
 
       class Response < Value.new(*ResponseAttributes::Mastery::ATTRIBUTES); end
