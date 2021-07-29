@@ -8,7 +8,14 @@ All notable changes to this project will be documented in this file.
 
 - League endpoints
   - API
+    - ACCOUNT-V1
+      - `ByPUUID`
+      - `ByRiotId`
+      - `ActiveShard`
     - CHAMPION-MASTERY-V4
+      - `AllChampions`
+      - `ByChampion`
+      - `TotalScore
     - CHAMPION-V3
     - LOL-STATUS-V4
     - SUMMONER-V4
