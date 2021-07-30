@@ -4,7 +4,7 @@ module RiotApi
   module Global
     class ActiveShard < RiotApi::Adapter
 
-      include ResponseAttributes
+      include RiotApi::Global::ResponseAttributes
 
       GAMES = %w[lor val].freeze
       REGIONS = %w[europe americas asia esports].freeze
@@ -16,9 +16,8 @@ module RiotApi
       end
 
       def call
-        response = send_request
-
-        wrap_response(response)
+        check_region
+        wrap_response(send_request)
       end
 
       private

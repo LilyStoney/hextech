@@ -9,10 +9,11 @@ module RiotApi
     module Mastery
       include RiotApi::League::ResponseAttributes
 
-      def call
-        response = send_request
+      REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
 
-        wrap_response(response)
+      def call
+        check_region
+        wrap_response(send_request)
       end
 
       class Response < Value.new(*ResponseAttributes::Mastery::ATTRIBUTES); end

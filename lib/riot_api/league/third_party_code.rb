@@ -6,12 +6,16 @@ module RiotApi
 
       include RiotApi::League::ResponseAttributes
 
+      REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
+
       def initialize(summoner_id:, region: 'euw1')
         @summoner_id = summoner_id
         @region = region
       end
 
       def call
+        check_region
+
         response = send_request
 
         raise ThirdPartyCodeError, 'There is no code for the given summoner or it expired' if response.not_found?

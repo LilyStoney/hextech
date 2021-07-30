@@ -6,14 +6,15 @@ module RiotApi
 
       include RiotApi::League::ResponseAttributes
 
+      REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
+
       def initialize(region: 'euw1')
         @region = region
       end
 
       def call
-        response = send_request
-
-        wrap_response(response)
+        check_region
+        wrap_response(send_request)
       end
 
       private

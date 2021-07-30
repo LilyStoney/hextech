@@ -17,7 +17,9 @@ All notable changes to this project will be documented in this file.
       - `ByChampion`
       - `TotalScore
     - CHAMPION-V3
+      - `ChampionRotation`
     - LOL-STATUS-V4
+      - `Status`
     - SUMMONER-V4
       - `ByAccountId`
       - `ByPUUID`
@@ -26,5 +28,10 @@ All notable changes to this project will be documented in this file.
   - CDN
     - Champion Information
     - Patch Information
+
+- Valorant endpoints
+  - API
+    - VAL-STATUS-V1
+      - `Status`
 
 [0.0.1]: https://github.com/lilystoney/riot_api/releases/tag/v0.0.1

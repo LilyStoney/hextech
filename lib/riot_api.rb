@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'riot_api/mixins'
 require_relative 'riot_api/adapter'
 require_relative 'riot_api/global'
 require_relative 'riot_api/league'

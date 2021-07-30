@@ -5,6 +5,8 @@ require 'values'
 module RiotApi
   class Adapter
 
+    include RiotApi::Mixins::Regions
+
     class << self
 
       def call(...)

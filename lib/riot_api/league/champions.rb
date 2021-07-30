@@ -13,9 +13,7 @@ module RiotApi
       end
 
       def call
-        response = send_request
-
-        wrap_response(response)
+        wrap_response(send_request)
       end
 
       private
