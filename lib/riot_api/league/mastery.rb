@@ -16,7 +16,13 @@ module RiotApi
         wrap_response(send_request)
       end
 
-      class Response < Value.new(*ResponseAttributes::Mastery::ATTRIBUTES); end
+      class Response < Value.new(*ResponseAttributes::Mastery::ATTRIBUTES)
+
+        def last_played
+          Time.at(last_play_time / 1000)
+        end
+
+      end
     end
   end
 end
