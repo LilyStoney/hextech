@@ -3,7 +3,7 @@
 module RiotApi
   class Adapter
 
-    include RiotApi::Mixins::Regions
+    include RiotApi::Mixins::ArgumentChecks
 
     class << self
 

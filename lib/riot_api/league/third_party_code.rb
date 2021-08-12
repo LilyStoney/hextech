@@ -14,7 +14,7 @@ module RiotApi
       end
 
       def call
-        check_region
+        validate_collection_for(collection: REGIONS, option: region)
 
         response = send_request
 

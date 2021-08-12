@@ -11,7 +11,7 @@ module RiotApi
       REGIONS = %w[europe americas asia esports].freeze
 
       def call
-        check_region
+        validate_collection_for(collection: REGIONS, option: region)
         wrap_response(send_request)
       end
     end

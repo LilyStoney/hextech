@@ -13,7 +13,7 @@ module RiotApi
       end
 
       def call
-        check_region
+        validate_collection_for(collection: REGIONS, option: region)
         wrap_response(send_request)
       end
 

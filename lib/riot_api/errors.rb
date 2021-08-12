@@ -5,7 +5,7 @@ module RiotApi
 
   class ServerError < StandardError; end
 
-  class InvalidRegionError < StandardError; end
+  class InvalidArgumentError < StandardError; end
 
   class ApiKeyMissing < StandardError
 

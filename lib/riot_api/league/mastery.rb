@@ -12,7 +12,7 @@ module RiotApi
       REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
 
       def call
-        check_region
+        validate_collection_for(collection: REGIONS, option: region)
         wrap_response(send_request)
       end
 

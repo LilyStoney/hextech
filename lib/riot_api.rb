@@ -3,7 +3,7 @@
 require 'values'
 require 'open-uri'
 
-require 'riot_api/mixins/regions'
+require 'riot_api/mixins/argument_checks'
 
 require 'riot_api/adapter'
 require 'riot_api/errors'
