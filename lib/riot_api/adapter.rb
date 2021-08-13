@@ -22,6 +22,7 @@ module RiotApi
       )
 
       raise Forbidden if response.forbidden?
+      raise NotFound if response.not_found?
       raise ServerError if response.server_error?
 
       response

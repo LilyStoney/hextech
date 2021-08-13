@@ -5,7 +5,15 @@ module RiotApi
 
   class ServerError < StandardError; end
 
-  class InvalidArgumentError < StandardError; end
+  class InvalidArgument < StandardError; end
+
+  class NotFound < StandardError
+
+    def message
+      'Resource not found.'
+    end
+
+  end
 
   class ApiKeyMissing < StandardError
 
