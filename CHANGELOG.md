@@ -18,8 +18,19 @@ All notable changes to this project will be documented in this file.
       - `TotalScore
     - CHAMPION-V3
       - `ChampionRotation`
+    - CLASH-V1
+      - `AllTournaments`
+      - `BySummonerId`
+      - `ByTournamentId`
+      - `TeamByTeamId`
+      - `TournamentByTeamId`
+    - LEAGUE-V4
+      - `ByQueue`
     - LOL-STATUS-V4
       - `Status`
+    - SPECTATOR-V4
+      - `ActiveGames`
+      - `FeaturedGames`
     - SUMMONER-V4
       - `ByAccountId`
       - `ByPUUID`
