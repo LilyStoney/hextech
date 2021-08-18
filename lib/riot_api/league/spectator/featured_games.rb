@@ -19,6 +19,11 @@ module RiotApi
           "https://#{region}.api.riotgames.com/lol/spectator/v4/featured-games"
         end
 
+        def wrap_response(response)
+          data = format_response(response)
+          RiotApi::League::Response::FeaturedGames.new(data)
+        end
+
       end
     end
   end

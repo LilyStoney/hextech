@@ -22,10 +22,9 @@ module RiotApi
         end
 
         def wrap_response(response)
-          Response.with(response.transform_keys { _1.underscore.to_sym })
+          data = format_response(response)
+          RiotApi::Global::Response::Account::ByRiotId.new(data)
         end
-
-        class Response < Value.new(*ResponseAttributes::Account::ByRiotId::ATTRIBUTES); end
 
       end
     end

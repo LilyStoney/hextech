@@ -27,8 +27,8 @@ Gem::Specification.new do |spec|
   spec.executables                 = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths               = ['lib']
 
+  spec.add_dependency 'dry-struct'
   spec.add_dependency 'httparty'
-  spec.add_dependency 'values'
 
   spec.add_development_dependency 'pry', '~> 0.13.1'
   spec.add_development_dependency 'rspec', '~> 3.9.0'

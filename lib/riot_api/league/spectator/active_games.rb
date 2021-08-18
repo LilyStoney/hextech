@@ -2,10 +2,10 @@
 
 module RiotApi
   module League
-    module Clash
-      class BySummonerId < RiotApi::Adapter
+    module Spectator
+      class ActiveGames < RiotApi::Adapter
 
-        include League::Clash
+        include League::Spectator
 
         def initialize(summoner_id:, region: 'euw1')
           @summoner_id = summoner_id
@@ -17,14 +17,12 @@ module RiotApi
         attr_reader :summoner_id, :region
 
         def path
-          "https://#{region}.api.riotgames.com/lol/clash/v1/players/by-summoner/#{summoner_id}"
+          "https://#{region}.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/#{summoner_id}"
         end
 
         def wrap_response(response)
-          response.map do |player|
-            data = format_response(player)
-            RiotApi::League::Response::Clash::Player.new(data)
-          end
+          data = format_response(response)
+          RiotApi::League::Response::ActiveGames.new(data)
         end
 
       end

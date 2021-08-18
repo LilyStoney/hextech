@@ -2,12 +2,12 @@
 
 module RiotApi
   module Global
-    module ResponseAttributes
+    module Response
       module Account
-        module ByRiotId
-          ATTRIBUTES = %i[
-            puuid
-          ].freeze
+        class ByRiotId < RiotApi::BaseStruct
+
+          attribute :puuid, Types::String
+
         end
       end
     end

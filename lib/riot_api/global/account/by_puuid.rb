@@ -3,7 +3,7 @@
 module RiotApi
   module Global
     module Account
-      class ByPUUID < RiotApi::Adapter
+      class ByPuuid < RiotApi::Adapter
 
         include Global::Account
 
@@ -21,10 +21,9 @@ module RiotApi
         end
 
         def wrap_response(response)
-          Response.with(response.transform_keys { _1.underscore.to_sym })
+          data = format_response(response)
+          RiotApi::Global::Response::Account::ByPuuid.new(data)
         end
-
-        class Response < Value.new(*ResponseAttributes::Account::ByPUUID::ATTRIBUTES); end
 
       end
     end

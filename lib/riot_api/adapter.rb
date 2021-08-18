@@ -30,6 +30,10 @@ module RiotApi
 
     private
 
+    def format_response(response)
+      response.deep_transform_keys { _1.underscore.to_sym }
+    end
+
     def params
       return @params if defined?(@params)
 

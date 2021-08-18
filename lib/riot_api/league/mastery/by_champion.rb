@@ -23,7 +23,8 @@ module RiotApi
         end
 
         def wrap_response(response)
-          Response.with(response.transform_keys { _1.underscore.to_sym })
+          data = format_response(response)
+          RiotApi::League::Response::Mastery.new(data)
         end
 
       end

@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.0.1] - 2021-07-28
+## [0.0.1] - 2021-08-24
 
 ### Added
 
@@ -28,6 +28,10 @@ All notable changes to this project will be documented in this file.
       - `ByQueue`
     - LOL-STATUS-V4
       - `Status`
+    - MATCH-V5
+      - `ByPuuid`
+      - `ByMatchId`
+      - `MatchTimeline`
     - SPECTATOR-V4
       - `ActiveGames`
       - `FeaturedGames`
@@ -36,6 +40,7 @@ All notable changes to this project will be documented in this file.
       - `ByPUUID`
       - `BySummonerId`
       - `BySummonerName`
+    - THIRD-PARTY-CODE-V4
   - CDN
     - Champion Information
     - Patch Information

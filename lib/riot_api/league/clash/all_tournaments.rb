@@ -21,11 +21,10 @@ module RiotApi
 
         def wrap_response(response)
           response.map do |tournament|
-            Response.with(tournament.transform_keys { _1.underscore.to_sym })
+            data = format_response(tournament)
+            RiotApi::League::Response::Clash::Tournament.new(data)
           end
         end
-
-        class Response < Value.new(*ResponseAttributes::Clash::Tournament::ATTRIBUTES); end
 
       end
     end

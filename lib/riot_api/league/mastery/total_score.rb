@@ -21,10 +21,8 @@ module RiotApi
         end
 
         def wrap_response(response)
-          Response.with(total_score: response.body)
+          OpenStruct.new(total_score: response.body)
         end
-
-        class Response < Value.new(:total_score); end
 
       end
     end
