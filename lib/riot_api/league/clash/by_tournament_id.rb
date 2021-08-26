@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Clash
-      class ByTournamentId < RiotApi::Adapter
+      class ByTournamentId < RiotApi::League::Clash::Base
 
-        include League::Clash
-
-        def initialize(tournament_id:, region: 'euw1')
+        def initialize(tournament_id:, region:)
           @tournament_id = tournament_id
           @region = region
         end
@@ -22,7 +20,7 @@ module RiotApi
 
         def wrap_response(response)
           data = format_response(response)
-          RiotApi::League::Response::Clash::Team.new(data)
+          RiotApi::League::Response::Clash::Tournament.new(data)
         end
 
       end

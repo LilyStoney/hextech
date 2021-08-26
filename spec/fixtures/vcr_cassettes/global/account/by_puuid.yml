@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://europe.api.riotgames.com/riot/account/v1/accounts/by-puuid/1234?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 24 Oct 2021 20:53:14 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Headers:
+      - Content-Type
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT
+      - GET, PUT, DELETE, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      - "*"
+      Vary:
+      - Accept-Encoding
+      X-App-Rate-Limit:
+      - 20:1,100:120
+      X-App-Rate-Limit-Count:
+      - 1:1,1:120
+      X-Method-Rate-Limit:
+      - 1000:60
+      X-Method-Rate-Limit-Count:
+      - 1:60
+      X-Riot-Edge-Trace-Id:
+      - 92711fd3-4610-4a18-98fe-f73f8e3a7224
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+    body:
+      encoding: ASCII-8BIT
+      string: '{"puuid":"1234","gameName":"Example Summoner","tagLine":"EUW"}'
+  recorded_at: Sun, 24 Oct 2021 20:53:15 GMT
+recorded_with: VCR 6.0.0

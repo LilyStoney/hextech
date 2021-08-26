@@ -12,7 +12,7 @@ module RiotApi
         attribute :maintenances, Types::Array do
           attribute :id, Types::Integer
           attribute :maintenance_status, Types::String
-          attribute :incident_severity, Types::String
+          attribute :incident_severity, Types::String.optional
 
           attribute :titles, Types::Array do
             attribute :locale, Types::String
@@ -30,8 +30,8 @@ module RiotApi
           end
 
           attribute :created_at, Types::String
-          attribute :archive_at, Types::String
-          attribute :updated_at, Types::String
+          attribute :archive_at, Types::String.optional
+          attribute :updated_at, Types::String.optional
           attribute :platforms, Types::Array
         end
 
@@ -52,12 +52,12 @@ module RiotApi
             attribute :publish_locations, Types::Array
             attribute :translations, Types::Array
             attribute :created_at, Types::String
-            attribute :updated_at, Types::String
+            attribute :updated_at, Types::String.optional
           end
 
           attribute :created_at, Types::String
           attribute :archive_at, Types::String
-          attribute :updated_at, Types::String
+          attribute :updated_at, Types::String.optional
           attribute :platforms, Types::Array
         end
 

@@ -7,6 +7,8 @@ module RiotApi
         class ByRiotId < RiotApi::BaseStruct
 
           attribute :puuid, Types::String
+          attribute :game_name, Types::String
+          attribute :tag_line, Types::String
 
         end
       end

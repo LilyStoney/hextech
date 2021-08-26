@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.api.riotgames.com/lol/clash/v1/players/by-summoner/0ecyETCiLKdBsaSYMJvoTtaz0GMEN0zpNjovVHMxCNAON8Q?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Oct 2021 20:12:09 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-App-Rate-Limit:
+      - 20:1,100:120
+      X-App-Rate-Limit-Count:
+      - 1:1,2:120
+      X-Method-Rate-Limit:
+      - 200:60
+      X-Method-Rate-Limit-Count:
+      - 2:60
+      X-Riot-Edge-Trace-Id:
+      - 71934420-7fc4-42b8-996a-5313ba96b150
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, DELETE, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"summonerId":1,"teamId":1,"position":"BOTTOM","role":"CAPTAIN"},{"summonerId":2,"teamId":1,"position":"MIDDLE","role":"MEMBER"},{"summonerId":3,"teamId":1,"position":"TOP","role":"MEMBER"},{"summonerId":4,"teamId":1,"position":"JUNGLE","role":"MEMBER"},{"summonerId":5,"teamId":1,"position":"UTILITY","role":"MEMBER"}]'
+  recorded_at: Tue, 19 Oct 2021 20:12:07 GMT
+recorded_with: VCR 6.0.0

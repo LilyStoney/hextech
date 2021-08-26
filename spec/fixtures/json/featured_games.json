@@ -1,0 +1,120 @@
+{
+  "game_list": [
+    {
+      "game_mode": "CLASSIC",
+      "game_length": 391,
+      "map_id": 11,
+      "game_type": "MATCHED_GAME",
+      "banned_champions": [
+        { "pick_turn": 1, "champion_id": 114, "team_id": 100 },
+        { "pick_turn": 2, "champion_id": 39, "team_id": 100 },
+        { "pick_turn": 3, "champion_id": 91, "team_id": 100 },
+        { "pick_turn": 4, "champion_id": 236, "team_id": 100 },
+        { "pick_turn": 5, "champion_id": 432, "team_id": 100 },
+        { "pick_turn": 6, "champion_id": 91, "team_id": 200 },
+        { "pick_turn": 7, "champion_id": 119, "team_id": 200 },
+        { "pick_turn": 8, "champion_id": 28, "team_id": 200 },
+        { "pick_turn": 9, "champion_id": 246, "team_id": 200 },
+        { "pick_turn": 10, "champion_id": 34, "team_id": 200 }
+      ],
+      "game_id": 1234567890,
+      "observers": { "encryption_key": "encryption_key" },
+      "game_queue_config_id": 420,
+      "game_start_time": 1634404021976,
+      "participants": [
+        {
+          "bot": false,
+          "spell2_id": 12,
+          "profile_icon_id": 29,
+          "summoner_name": "Example Summoner 1",
+          "champion_id": 266,
+          "team_id": 100,
+          "spell1_id": 4
+        },
+        {
+          "bot": false,
+          "spell2_id": 7,
+          "profile_icon_id": 13,
+          "summoner_name": "Example Summoner 2",
+          "champion_id": 81,
+          "team_id": 100,
+          "spell1_id": 4
+        },
+        {
+          "bot": false,
+          "spell2_id": 14,
+          "profile_icon_id": 3523,
+          "summoner_name": "Example Summoner 3",
+          "champion_id": 12,
+          "team_id": 100,
+          "spell1_id": 4
+        },
+        {
+          "bot": false,
+          "spell2_id": 4,
+          "profile_icon_id": 654,
+          "summoner_name": "Example Summoner 4",
+          "champion_id": 64,
+          "team_id": 100,
+          "spell1_id": 11
+        },
+        {
+          "bot": false,
+          "spell2_id": 4,
+          "profile_icon_id": 5040,
+          "summoner_name": "Example Summoner 5",
+          "champion_id": 711,
+          "team_id": 100,
+          "spell1_id": 12
+        },
+        {
+          "bot": false,
+          "spell2_id": 7,
+          "profile_icon_id": 22,
+          "summoner_name": "Example Summoner 6",
+          "champion_id": 350,
+          "team_id": 200,
+          "spell1_id": 3
+        },
+        {
+          "bot": false,
+          "spell2_id": 12,
+          "profile_icon_id": 1151,
+          "summoner_name": "Example Summoner 7",
+          "champion_id": 517,
+          "team_id": 200,
+          "spell1_id": 4
+        },
+        {
+          "bot": false,
+          "spell2_id": 4,
+          "profile_icon_id": 549,
+          "summoner_name": "Example Summoner 8",
+          "champion_id": 104,
+          "team_id": 200,
+          "spell1_id": 12
+        },
+        {
+          "bot": false,
+          "spell2_id": 11,
+          "profile_icon_id": 4909,
+          "summoner_name": "Example Summoner 9",
+          "champion_id": 876,
+          "team_id": 200,
+          "spell1_id": 4
+        },
+        {
+          "bot": false,
+          "spell2_id": 21,
+          "profile_icon_id": 746,
+          "summoner_name": "Example Summoner 10",
+          "champion_id": 21,
+          "team_id": 200,
+          "spell1_id": 4
+        }
+      ],
+      "platform_id": "EUW1"
+    }
+  ],
+  "client_refresh_interval": 300
+}

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'mastery/base'
 require_relative 'mastery/all_champions'
 require_relative 'mastery/by_champion'
 require_relative 'mastery/total_score'
@@ -7,11 +8,20 @@ require_relative 'mastery/total_score'
 module RiotApi
   module League
     module Mastery
-      REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
+      class << self
 
-      def call
-        validate_collection_for(collection: REGIONS, option: region)
-        wrap_response(send_request)
+        def all_champions(summoner_id:, region: 'euw1')
+          Mastery::AllChampions.call(summoner_id: summoner_id, region: region)
+        end
+
+        def by_champion(summoner_id:, champion_id:, region: 'euw1')
+          Mastery::ByChampion.call(summoner_id: summoner_id, champion_id: champion_id, region: region)
+        end
+
+        def total_score(summoner_id:, region: 'euw1')
+          Mastery::TotalScore.call(summoner_id: summoner_id, region: region)
+        end
+
       end
     end
   end

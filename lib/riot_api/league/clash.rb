@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'clash/base'
 require_relative 'clash/all_tournaments'
 require_relative 'clash/by_summoner_id'
 require_relative 'clash/by_tournament_id'
@@ -9,11 +10,28 @@ require_relative 'clash/tournament_by_team_id'
 module RiotApi
   module League
     module Clash
-      REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
+      class << self
 
-      def call
-        validate_collection_for(collection: REGIONS, option: region)
-        wrap_response(send_request)
+        def all_tournaments(region: 'euw1')
+          Clash::AllTournaments.call(region: region)
+        end
+
+        def by_summoner_id(summoner_id:, region: 'euw1')
+          Clash::BySummonerId.call(summoner_id: summoner_id, region: region)
+        end
+
+        def by_tournament_id(tournament_id:, region: 'euw1')
+          Clash::ByTournamentId.call(tournament_id: tournament_id, region: region)
+        end
+
+        def team_by_team_id(team_id:, region: 'euw1')
+          Clash::TeamByTeamId.call(team_id: team_id, region: region)
+        end
+
+        def tournament_by_team_id(team_id:, region: 'euw1')
+          Clash::TournamentByTeamId.call(team_id: team_id, region: region)
+        end
+
       end
     end
   end

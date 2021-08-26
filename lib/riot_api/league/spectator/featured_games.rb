@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Spectator
-      class FeaturedGames < RiotApi::Adapter
+      class FeaturedGames < RiotApi::League::Spectator::Base
 
-        include League::Spectator
-
-        def initialize(region: 'euw1')
+        def initialize(region:)
           @region = region
         end
 

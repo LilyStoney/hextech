@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Clash
-      class AllTournaments < RiotApi::Adapter
+      class AllTournaments < RiotApi::League::Clash::Base
 
-        include League::Clash
-
-        def initialize(region: 'euw1')
+        def initialize(region:)
           @region = region
         end
 

@@ -4,6 +4,7 @@ module RiotApi
   class Adapter
 
     include RiotApi::Mixins::ArgumentChecks
+    include RiotApi::Mixins::TransformKeys
 
     class << self
 
@@ -31,7 +32,7 @@ module RiotApi
     private
 
     def format_response(response)
-      response.deep_transform_keys { _1.underscore.to_sym }
+      response.to_symbolized_snake_keys
     end
 
     def params

@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/1234?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 16 Oct 2021 17:19:34 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '3'
+      Cache-Control:
+      - no-cache, max-age=180
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 UTC
+      Pragma:
+      - No-cache
+      Via:
+      - 1.1 varnish, 1.1 webproxy-i-0b6b425b49bb2abd7 (squid/3.5.20)
+      X-App-Rate-Limit:
+      - 20:1,100:120
+      X-App-Rate-Limit-Count:
+      - 1:1,4:120
+      X-Cache:
+      - HIT from webproxy-i-0b6b425b49bb2abd7
+      X-Cache-Lookup:
+      - HIT from webproxy-i-0b6b425b49bb2abd7:3128
+      X-Method-Rate-Limit:
+      - 20000:10,1200000:600
+      X-Method-Rate-Limit-Count:
+      - 1:10,3:600
+      X-Riot-Edge-Trace-Id:
+      - afc30e62-a9e2-4b56-b1d8-de3da716f13e
+      X-Varnish:
+      - '925543277'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, DELETE, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyAiZ2FtZV9tb2RlIjogIkNMQVNTSUMiLCAiZ2FtZV9sZW5ndGgiOiA1NjksICJtYXBfaWQiOiAxMSwgImdhbWVfdHlwZSI6ICJNQVRDSEVEX0dBTUUiLCAiYmFubmVkX2NoYW1waW9ucyI6IFsgeyAicGlja190dXJuIjogMSwgImNoYW1waW9uX2lkIjogMTE0LCAidGVhbV9pZCI6IDEwMCB9LCB7ICJwaWNrX3R1cm4iOiAyLCAiY2hhbXBpb25faWQiOiAzOSwgInRlYW1faWQiOiAxMDAgfSwgeyAicGlja190dXJuIjogMywgImNoYW1waW9uX2lkIjogOTEsICJ0ZWFtX2lkIjogMTAwIH0sIHsgInBpY2tfdHVybiI6IDQsICJjaGFtcGlvbl9pZCI6IDIzNiwgInRlYW1faWQiOiAxMDAgfSwgeyAicGlja190dXJuIjogNSwgImNoYW1waW9uX2lkIjogNDMyLCAidGVhbV9pZCI6IDEwMCB9LCB7ICJwaWNrX3R1cm4iOiA2LCAiY2hhbXBpb25faWQiOiA5MSwgInRlYW1faWQiOiAyMDAgfSwgeyAicGlja190dXJuIjogNywgImNoYW1waW9uX2lkIjogMTE5LCAidGVhbV9pZCI6IDIwMCB9LCB7ICJwaWNrX3R1cm4iOiA4LCAiY2hhbXBpb25faWQiOiAyOCwgInRlYW1faWQiOiAyMDAgfSwgeyAicGlja190dXJuIjogOSwgImNoYW1waW9uX2lkIjogMjQ2LCAidGVhbV9pZCI6IDIwMCB9LCB7ICJwaWNrX3R1cm4iOiAxMCwgImNoYW1waW9uX2lkIjogMzQsICJ0ZWFtX2lkIjogMjAwIH0gXSwgImdhbWVfaWQiOiA1NTA4OTg5MzU5LCAib2JzZXJ2ZXJzIjogeyAiZW5jcnlwdGlvbl9rZXkiOiAiQU1OVC9Na2Q3ZmtNQlByZWF6QW8rRkVUM2k4eW5nWnkiIH0sICJnYW1lX3F1ZXVlX2NvbmZpZ19pZCI6IDQyMCwgImdhbWVfc3RhcnRfdGltZSI6IDE2MzQ0MDQwMjE5NzYsICJwYXJ0aWNpcGFudHMiOiBbIHsgImJvdCI6IGZhbHNlLCAic3BlbGwyX2lkIjogMTIsICJwcm9maWxlX2ljb25faWQiOiAyOSwgInN1bW1vbmVyX25hbWUiOiAiRXhhbXBsZSBTdW1tb25lciAxIiwgImNoYW1waW9uX2lkIjogMjY2LCAidGVhbV9pZCI6IDEwMCwgInNwZWxsMV9pZCI6IDQgfSwgeyAiYm90IjogZmFsc2UsICJzcGVsbDJfaWQiOiA3LCAicHJvZmlsZV9pY29uX2lkIjogMTMsICJzdW1tb25lcl9uYW1lIjogIkV4YW1wbGUgU3VtbW9uZXIgMiIsICJjaGFtcGlvbl9pZCI6IDgxLCAidGVhbV9pZCI6IDEwMCwgInNwZWxsMV9pZCI6IDQgfSwgeyAiYm90IjogZmFsc2UsICJzcGVsbDJfaWQiOiAxNCwgInByb2ZpbGVfaWNvbl9pZCI6IDM1MjMsICJzdW1tb25lcl9uYW1lIjogIkV4YW1wbGUgU3VtbW9uZXIgMyIsICJjaGFtcGlvbl9pZCI6IDEyLCAidGVhbV9pZCI6IDEwMCwgInNwZWxsMV9pZCI6IDQgfSwgeyAiYm90IjogZmFsc2UsICJzcGVsbDJfaWQiOiA0LCAicHJvZmlsZV9pY29uX2lkIjogNjU0LCAic3VtbW9uZXJfbmFtZSI6ICJFeGFtcGxlIFN1bW1vbmVyIDQiLCAiY2hhbXBpb25faWQiOiA2NCwgInRlYW1faWQiOiAxMDAsICJzcGVsbDFfaWQiOiAxMSB9LCB7ICJib3QiOiBmYWxzZSwgInNwZWxsMl9pZCI6IDQsICJwcm9maWxlX2ljb25faWQiOiA1MDQwLCAic3VtbW9uZXJfbmFtZSI6ICJFeGFtcGxlIFN1bW1vbmVyIDUiLCAiY2hhbXBpb25faWQiOiA3MTEsICJ0ZWFtX2lkIjogMTAwLCAic3BlbGwxX2lkIjogMTIgfSwgeyAiYm90IjogZmFsc2UsICJzcGVsbDJfaWQiOiA3LCAicHJvZmlsZV9pY29uX2lkIjogMjIsICJzdW1tb25lcl9uYW1lIjogIkV4YW1wbGUgU3VtbW9uZXIgNiIsICJjaGFtcGlvbl9pZCI6IDM1MCwgInRlYW1faWQiOiAyMDAsICJzcGVsbDFfaWQiOiAzIH0sIHsgImJvdCI6IGZhbHNlLCAic3BlbGwyX2lkIjogMTIsICJwcm9maWxlX2ljb25faWQiOiAxMTUxLCAic3VtbW9uZXJfbmFtZSI6ICJFeGFtcGxlIFN1bW1vbmVyIDciLCAiY2hhbXBpb25faWQiOiA1MTcsICJ0ZWFtX2lkIjogMjAwLCAic3BlbGwxX2lkIjogNCB9LCB7ICJib3QiOiBmYWxzZSwgInNwZWxsMl9pZCI6IDQsICJwcm9maWxlX2ljb25faWQiOiA1NDksICJzdW1tb25lcl9uYW1lIjogIkV4YW1wbGUgU3VtbW9uZXIgOCIsICJjaGFtcGlvbl9pZCI6IDEwNCwgInRlYW1faWQiOiAyMDAsICJzcGVsbDFfaWQiOiAxMiB9LCB7ICJib3QiOiBmYWxzZSwgInNwZWxsMl9pZCI6IDExLCAicHJvZmlsZV9pY29uX2lkIjogNDkwOSwgInN1bW1vbmVyX25hbWUiOiAiRXhhbXBsZSBTdW1tb25lciA5IiwgImNoYW1waW9uX2lkIjogODc2LCAidGVhbV9pZCI6IDIwMCwgInNwZWxsMV9pZCI6IDQgfSwgeyAiYm90IjogZmFsc2UsICJzcGVsbDJfaWQiOiAyMSwgInByb2ZpbGVfaWNvbl9pZCI6IDc0NiwgInN1bW1vbmVyX25hbWUiOiAiRXhhbXBsZSBTdW1tb25lciAxMCIsICJjaGFtcGlvbl9pZCI6IDIxLCAidGVhbV9pZCI6IDIwMCwgInNwZWxsMV9pZCI6IDQgfSBdLCAicGxhdGZvcm1faWQiOiAiRVVXMSIgfQ==
+  recorded_at: Sat, 16 Oct 2021 17:19:34 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ddragon.leagueoflegends.com/api/versions.json?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD
+      Access-Control-Max-Age:
+      - '3000'
+      Last-Modified:
+      - Wed, 06 Oct 2021 20:24:40 GMT
+      X-Amz-Version-Id:
+      - k5UNW6qdwKNDmCQQNRe4oUIBJCLC4Su7
+      Server:
+      - AmazonS3
+      Date:
+      - Sat, 16 Oct 2021 18:36:09 GMT
+      Etag:
+      - W/"86ca36db05dd8fb1ef84459ab94d8572"
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5fb2d4f0348e0a6a100d917a8fc19654.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BRU50-C1
+      X-Amz-Cf-Id:
+      - W0Jrkv32KM6EbcovcjSHRFLGcdb45ZtijA31YJM_blZzVI1RK1z3DA==
+      Age:
+      - '284'
+    body:
+      encoding: ASCII-8BIT
+      string: '["3.0.0","2.5.0","2.0.0","1.5.0","1.0.0"]'
+  recorded_at: Sat, 16 Oct 2021 18:37:21 GMT
+recorded_with: VCR 6.0.0

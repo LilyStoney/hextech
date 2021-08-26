@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/1234?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Oct 2021 22:41:47 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-App-Rate-Limit:
+      - 20:1,100:120
+      X-App-Rate-Limit-Count:
+      - 1:1,1:120
+      X-Method-Rate-Limit:
+      - 2000:60
+      X-Method-Rate-Limit-Count:
+      - 2:60
+      X-Riot-Edge-Trace-Id:
+      - ac236e45-12c6-4281-8a82-619ea50985ca
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, DELETE, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"championId":78,"championLevel":7,"championPoints":102510,"lastPlayTime":1607812245000,"championPointsSinceLastLevel":80910,"championPointsUntilNextLevel":0,"chestGranted":false,"tokensEarned":0,"summonerId":"1234"},{"championId":99,"championLevel":7,"championPoints":70876,"lastPlayTime":1532475123000,"championPointsSinceLastLevel":49276,"championPointsUntilNextLevel":0,"chestGranted":false,"tokensEarned":0,"summonerId":"1234"}]'
+  recorded_at: Mon, 18 Oct 2021 22:41:43 GMT
+recorded_with: VCR 6.0.0

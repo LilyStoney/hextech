@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Clash
-      class TournamentByTeamId < RiotApi::Adapter
+      class TournamentByTeamId < RiotApi::League::Clash::Base
 
-        include League::Clash
-
-        def initialize(team_id:, region: 'euw1')
+        def initialize(team_id:, region:)
           @team_id = team_id
           @region = region
         end

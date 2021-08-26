@@ -1,16 +1,22 @@
 # frozen_string_literal: true
 
+require_relative 'spectator/base'
 require_relative 'spectator/active_games'
 require_relative 'spectator/featured_games'
 
 module RiotApi
   module League
     module Spectator
-      REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
+      class << self
 
-      def call
-        validate_collection_for(collection: REGIONS, option: region)
-        wrap_response(send_request)
+        def active_games(summoner_id:, region: 'euw1')
+          Spectator::ActiveGames.call(summoner_id: summoner_id, region: region)
+        end
+
+        def featured_games(region: 'euw1')
+          Spectator::FeaturedGames.call(region: region)
+        end
+
       end
     end
   end

@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Mastery
-      class AllChampions < RiotApi::Adapter
+      class AllChampions < RiotApi::League::Mastery::Base
 
-        include League::Mastery
-
-        def initialize(summoner_id:, region: 'euw1')
+        def initialize(summoner_id:, region:)
           @summoner_id = summoner_id
           @region = region
         end

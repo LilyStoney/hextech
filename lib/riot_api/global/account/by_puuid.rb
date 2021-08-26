@@ -3,11 +3,9 @@
 module RiotApi
   module Global
     module Account
-      class ByPuuid < RiotApi::Adapter
+      class ByPuuid < RiotApi::Global::Account::Base
 
-        include Global::Account
-
-        def initialize(puuid:, region: 'europe')
+        def initialize(puuid:, region:)
           @puuid = puuid
           @region = region
         end

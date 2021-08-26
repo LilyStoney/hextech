@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Match
-      class ByPuuid < RiotApi::Adapter
+      class ByPuuid < RiotApi::League::Match::Base
 
-        include League::Match
-
-        def initialize(puuid:, region: 'EUROPE')
+        def initialize(puuid:, region:)
           @puuid = puuid
           @region = region
         end

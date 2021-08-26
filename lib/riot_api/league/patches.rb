@@ -9,7 +9,7 @@ module RiotApi
       end
 
       def previous
-        send_request.second
+        send_request[1]
       end
 
       private

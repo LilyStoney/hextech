@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Match
-      class Timeline < RiotApi::Adapter
+      class Timeline < RiotApi::League::Match::Base
 
-        include League::Match
-
-        def initialize(match_id:, region: 'EUROPE')
+        def initialize(match_id:, region:)
           @match_id = match_id
           @region = region
         end

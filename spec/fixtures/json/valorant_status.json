@@ -1,0 +1,140 @@
+{
+  "id": "EU",
+  "name": "Europe",
+  "locales": [
+    "ar_AE",
+    "de_DE",
+    "en_US",
+    "es_ES",
+    "es_MX",
+    "fr_FR",
+    "id_ID",
+    "it_IT",
+    "ja_JP",
+    "ko_KR",
+    "pl_PL",
+    "pt_BR",
+    "ru_RU",
+    "th_TH",
+    "tr_TR",
+    "vi_VN",
+    "zh_TW"
+  ],
+  "maintenances": [
+    {
+      "updates": [
+        {
+          "translations": [
+            {
+              "locale": "en_US",
+              "content": "On 10/21/2021 19:00 PDT the platform will be unavailable for planned maintenance at 10/21/2021 23:00 PDT."
+            },
+            {
+              "locale": "ar_AE",
+              "content": "في 22/10/2021 +04 06:00 لن تكون المنصة متاحة نظرًا لعملية صيانة مقررة في 22/10/2021 +04 10:00."
+            },
+            {
+              "locale": "de_DE",
+              "content": "Am 22/10/2021 03:00 BST ist die Plattform aufgrund von geplanten Wartungsarbeiten um 22/10/2021 07:00 BST nicht erreichbar."
+            },
+            {
+              "locale": "es_ES",
+              "content": "El 22/10/2021 03:00 BST la plataforma no estará disponible debido a un mantenimiento programado a las 22/10/2021 07:00 BST."
+            },
+            {
+              "locale": "es_MX",
+              "content": "El 10/21/2021 20:00 GMT-06, la plataforma no estará disponible debido a un mantenimiento programado el 10/22/2021 00:00 GMT-06."
+            },
+            {
+              "locale": "fr_FR",
+              "content": "Le 22/10/2021 03:00 BST, la plateforme sera indisponible en raison d'une maintenance prévue à 22/10/2021 07:00 BST."
+            },
+            {
+              "locale": "id_ID",
+              "content": "Pada 09:00 WIB 22/10/2021, platform tak tersedia untuk pemeliharaan terjadwal pada 13:00 WIB 22/10/2021."
+            },
+            {
+              "locale": "it_IT",
+              "content": "In data 22/10/2021 03:00 BST, la piattaforma sarà inaccessibile per una manutenzione programmata, prevista per le ore 22/10/2021 07:00 BST."
+            },
+            {
+              "locale": "ja_JP",
+              "content": "定期メンテナンスのため、こちらのプラットフォームでは 2021/10/22 11:00 JST の 2021/10/22 15:00 JST からゲームが一時的に利用できなくなります。"
+            },
+            {
+              "locale": "ko_KR",
+              "content": "2021/10/22 15:00 KST에 예정된 점검으로 인해 2021/10/22 11:00 KST에 플랫폼이 비활성화될 예정입니다. 양해 부탁드립니다."
+            },
+            {
+              "locale": "pl_PL",
+              "content": "Dnia 22/10/2021 04:00 CEST platforma będzie niedostępna ze względu na planowaną o 22/10/2021 08:00 CEST przerwę techniczną."
+            },
+            {
+              "locale": "pt_BR",
+              "content": "Em 21/10/2021 23:00 GMT-03, a plataforma ficará indisponível para a manutenção planejada que ocorrerá às 22/10/2021 03:00 GMT-03."
+            },
+            {
+              "locale": "ru_RU",
+              "content": "Платформа будет недоступна в следующее время: 22/10/2021 05:00 MSK. Пройдут плановые технические работы (время работ: 22/10/2021 09:00 MSK)."
+            },
+            {
+              "locale": "th_TH",
+              "content": "ในวันที่ 09:00 GMT+07 22/10/2021 แพลตฟอร์มจะไม่สามารถใช้งานได้ชั่วคราวเพื่อเตรียมการสำหรับการปิดปรับปรุงระบบเวลา 13:00 GMT+07 22/10/2021"
+            },
+            {
+              "locale": "tr_TR",
+              "content": "Platform, 22/10/2021 09:00 GMT+03 itibarıyla yapılacak planlı bakım çalışması için 22/10/2021 05:00 GMT+03 itibarıyla devre dışı bırakılacak."
+            },
+            {
+              "locale": "vi_VN",
+              "content": "Vào ngày 09:00 GMT+07 22/10/2021, nền tảng trò chơi sẽ không khả dụng để bảo trì theo kế hoạch vào lúc 13:00 GMT+07 22/10/2021."
+            },
+            {
+              "locale": "zh_TW",
+              "content": "為預定於2021/10/22 14:00 GMT+08開始的維護做準備，遊戲平台將於2021/10/22 10:00 GMT+08關閉。"
+            }
+          ],
+          "publish_locations": ["game", "riotclient", "riotstatus"],
+          "updated_at": "2021-10-21T22:31:00+00:00",
+          "id": 6161,
+          "created_at": "2021-10-21T22:31:44.519502+00:00",
+          "author": "Riot Games",
+          "publish": true
+        }
+      ],
+      "updated_at": null,
+      "id": 3887,
+      "created_at": "2021-10-21T22:31:44.450882+00:00",
+      "platforms": ["windows"],
+      "maintenance_status": "scheduled",
+      "incident_severity": null,
+      "archive_at": null,
+      "titles": [
+        { "locale": "en_US", "content": "Maintenance Notification" },
+        { "locale": "ar_AE", "content": "إشعار صيانة" },
+        {
+          "locale": "de_DE",
+          "content": "Benachrichtigung zu Wartungsarbeiten"
+        },
+        { "locale": "es_ES", "content": "Notificación de mantenimiento" },
+        { "locale": "es_MX", "content": "Notificación de mantenimiento." },
+        { "locale": "fr_FR", "content": "Notification de maintenance" },
+        { "locale": "id_ID", "content": "Notifikasi Pemeliharaan" },
+        { "locale": "it_IT", "content": "Avviso manutenzione" },
+        { "locale": "ja_JP", "content": "メンテナンスのお知らせ" },
+        { "locale": "ko_KR", "content": "점검 안내" },
+        {
+          "locale": "pl_PL",
+          "content": "Powiadomienie o przerwie technicznej"
+        },
+        { "locale": "pt_BR", "content": "Notificação de manutenção" },
+        { "locale": "ru_RU", "content": "Технические работы" },
+        { "locale": "th_TH", "content": "ประกาศเตือนการปิดปรับปรุงระบบ" },
+        { "locale": "tr_TR", "content": "Bakım Bildirimi" },
+        { "locale": "vi_VN", "content": "Thông Báo Bảo Trì" },
+        { "locale": "zh_TW", "content": "維護通知" }
+      ]
+    }
+  ],
+  "incidents": []
+}

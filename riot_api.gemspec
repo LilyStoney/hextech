@@ -30,8 +30,12 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'dry-struct'
   spec.add_dependency 'httparty'
 
+  spec.add_development_dependency 'climate_control'
   spec.add_development_dependency 'pry', '~> 0.13.1'
   spec.add_development_dependency 'rspec', '~> 3.9.0'
   spec.add_development_dependency 'rubocop', '~> 0.93.1'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.43.2'
+  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'vcr'
+  spec.add_development_dependency 'webmock'
 end

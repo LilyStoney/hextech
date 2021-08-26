@@ -18,7 +18,7 @@ module RiotApi
 
         raise ThirdPartyCodeError, 'There is no code for the given summoner or it expired' if response.not_found?
 
-        response
+        response.body
       end
 
       private

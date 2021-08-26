@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Spectator
-      class ActiveGames < RiotApi::Adapter
+      class ActiveGames < RiotApi::League::Spectator::Base
 
-        include League::Spectator
-
-        def initialize(summoner_id:, region: 'euw1')
+        def initialize(summoner_id:, region:)
           @summoner_id = summoner_id
           @region = region
         end
