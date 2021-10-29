@@ -1,27 +1,33 @@
 # frozen_string_literal: true
 
+require_relative 'summoner/base'
 require_relative 'summoner/by_account_id'
+require_relative 'summoner/by_summoner_name'
 require_relative 'summoner/by_puuid'
 require_relative 'summoner/by_summoner_id'
-require_relative 'summoner/by_summoner_name'
 
 module RiotApi
   module League
     module Summoner
-      include RiotApi::League::ResponseAttributes
+      class << self
 
-      REGIONS = %w[euw1 eun1 na1 oc1 kr br1 tr1 la2 la1 ru jp1].freeze
+        def by_account_id(account_id:, region: 'euw1')
+          Summoner::ByAccountId.call(account_id: account_id, region: region)
+        end
 
-      def call
-        validate_collection_for(collection: REGIONS, option: region)
-        wrap_response(send_request)
+        def by_id(id:, region: 'euw1')
+          Summoner::BySummonerId.call(id: id, region: region)
+        end
+
+        def by_name(name:, region: 'euw1')
+          Summoner::BySummonerName.call(name: name, region: region)
+        end
+
+        def by_puuid(puuid:, region: 'euw1')
+          Summoner::ByPuuid.call(puuid: puuid, region: region)
+        end
+
       end
-
-      def wrap_response(response)
-        Response.with(response.transform_keys { _1.underscore.to_sym })
-      end
-
-      class Response < Value.new(*ResponseAttributes::Summoner::ATTRIBUTES); end
     end
   end
 end

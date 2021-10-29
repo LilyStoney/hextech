@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://europe.api.riotgames.com/lol/match/v5/matches/EUW1_1234567890/timeline?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 24 Oct 2021 19:34:31 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-App-Rate-Limit:
+      - 20:1,100:120
+      X-App-Rate-Limit-Count:
+      - 1:1,2:120
+      X-Method-Rate-Limit:
+      - '250:10'
+      X-Method-Rate-Limit-Count:
+      - '1:10'
+      X-Riot-Edge-Trace-Id:
+      - 6bb23e04-b0f4-4fda-b088-e88fe482261b
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, DELETE, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Range
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJtZXRhZGF0YSI6eyJkYXRhVmVyc2lvbiI6IjIiLCJtYXRjaElkIjoiRVVXMV8xMjM0NTY3ODkwIiwicGFydGljaXBhbnRzIjpbIlgwYlZIWmdPV2ZrQnZ6azl2bGlDdnFIQWRPWFFiNGFCOHZWazVjazBqUlJ0OUs0N0dVbTV4dHNWUmJCaFJKVGlDUHE1MGFaWWxmYXpiVSIsIk9BZzI1N0dVdk1EOTJveEJJd2xkcGJlQWRGcEpDRDZkVXE0V05ZNEhpU3F3UDE0djNGaWEyUFgwcE5sMVRvNUNpTTd1Q2ZCREk0UjI0VSIsIkJ5Y2Foa1JyQ3NXZUFmaUlSVjJwSTgyb3ExMndpS3MwQnJoRHhjaEp5eDRicE81R291T3hjN3hZaU5uNnlzWG9ZQUhWd3dnMGEzRG53MiIsIm9GcFN5TDJrNEYwS3Z6ZktqTVBCVW5Mdk11bTdrRllFVVFjQlVjVWRxV0RGMVVwMjlrYlJ6YnRFWkJUSFhMMVl3cmFMeUJlWk1saE5aQSIsIkpNQ2RNcDlFZEU1c29sdjV0dUdXRTVGczU1REVlcmZZRk93QzdrSUVRTFYyS044MVZGTUVjRWl5OG9FTnBmNmhQeXdFZ3hMY1pKd1hOcyIsImlPVnJyQ2RNSk11YTczWk13OWtvZ2kxYUdMWjZES1NGZzBaNjlyMVpCVXJyampTZm1FTVA1VW13QldBTFl0ZktxdVRYMjB2ZzQ4YXZjWCIsIkd1NWQ5OHhlcTg2WlQ3RXg5MUptVENsdERkRG8zRldiMHlTMmlTdGh6QXhvVnVJNXF0ckhJYWJqUTZ1WTBIemZYdGU2M0FKWHV6RVFERCIsInQ4VWhLc3J0dUlDeVZ2ZVA1RE9XVGM5WWtwaUFBaldScGJlcUFIS2ZLMUNoRDM4R1puWktocm1IMkdSNTh4eFA5d0ZSYlRrNjVFRVVHMCIsIlJrU3hkZExhclZUNG9FRnk1TGJvZDNPY01wTzFnb1haWFVsOGdXR2UxcmhwTWtXZWh6NUFmdExFYnlnbkV5ZEdndXc3aE1VaFgwVXNZQiIsIlljSUJDNEFaMXhBa3N5ZzlnQ1B2QU5oMW5NeGM2SnhCbkxmc0lzb3BOdXpEbXVHVk1nc2ZjbG9UWVNDb0F1cUxnVHVBV0xEcEYwRjc3VSJdfSwiaW5mbyI6eyJnYW1lQ3JlYXRpb24iOjE2MDc4MTI1OTEwMDAsImdhbWVEdXJhdGlvbiI6MTMxNTUwMiwiZ2FtZUlkIjo0OTc2NjM0NjMxLCJnYW1lTW9kZSI6IkNMQVNTSUMiLCJnYW1lTmFtZSI6InRlYW1idWlsZGVyLW1hdGNoLTQ5NzY2MzQ2MzEiLCJnYW1lU3RhcnRUaW1lc3RhbXAiOjE2MDc4MTI3MTc3OTUsImdhbWVUeXBlIjoiTUFUQ0hFRF9HQU1FIiwiZ2FtZVZlcnNpb24iOiIxMC4yNS4zNDguMTc5NyIsIm1hcElkIjoxMSwicGFydGljaXBhbnRzIjpbXX19=
+  recorded_at: Sun, 24 Oct 2021 19:34:31 GMT
+recorded_with: VCR 6.0.0

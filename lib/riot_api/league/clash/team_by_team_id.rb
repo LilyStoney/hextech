@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Clash
-      class TeamByTeamId < RiotApi::Adapter
+      class TeamByTeamId < RiotApi::League::Clash::Base
 
-        include League::Clash
-
-        def initialize(team_id:, region: 'euw1')
+        def initialize(team_id:, region:)
           @team_id = team_id
           @region = region
         end
@@ -21,10 +19,9 @@ module RiotApi
         end
 
         def wrap_response(response)
-          Response.with(response.transform_keys { _1.underscore.to_sym })
+          data = format_response(response)
+          RiotApi::League::Response::Clash::Team.new(data)
         end
-
-        class Response < Value.new(*ResponseAttributes::Clash::Team::ATTRIBUTES); end
 
       end
     end

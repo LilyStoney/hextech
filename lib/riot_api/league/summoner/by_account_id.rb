@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Summoner
-      class ByAccountId < RiotApi::Adapter
+      class ByAccountId < RiotApi::League::Summoner::Base
 
-        include League::Summoner
-
-        def initialize(account_id:, region: 'euw1')
+        def initialize(account_id:, region:)
           @account_id = account_id
           @region = region
         end

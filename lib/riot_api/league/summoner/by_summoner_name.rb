@@ -3,25 +3,23 @@
 module RiotApi
   module League
     module Summoner
-      class BySummonerName < RiotApi::Adapter
+      class BySummonerName < RiotApi::League::Summoner::Base
 
-        include League::Summoner
-
-        def initialize(summoner_name:, region: 'euw1')
-          @summoner_name = summoner_name
+        def initialize(name:, region:)
+          @name = name
           @region = region
         end
 
         private
 
-        attr_reader :summoner_name, :region
+        attr_reader :name, :region
 
         def path
           "https://#{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/#{clean_name}"
         end
 
         def clean_name
-          ERB::Util.url_encode(summoner_name)
+          ERB::Util.url_encode(name)
         end
 
       end

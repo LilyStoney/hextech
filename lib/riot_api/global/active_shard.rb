@@ -4,8 +4,6 @@ module RiotApi
   module Global
     class ActiveShard < RiotApi::Adapter
 
-      include RiotApi::Global::ResponseAttributes
-
       GAMES = %w[lor val].freeze
       REGIONS = %w[europe americas asia esports].freeze
 
@@ -30,10 +28,9 @@ module RiotApi
       end
 
       def wrap_response(response)
-        Response.with(response.transform_keys { _1.underscore.to_sym })
+        data = format_response(response)
+        RiotApi::Global::Response::ActiveShard.new(data)
       end
-
-      class Response < Value.new(*ResponseAttributes::ActiveShard::ATTRIBUTES); end
 
     end
   end

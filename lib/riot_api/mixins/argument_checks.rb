@@ -4,9 +4,9 @@ module RiotApi
   module Mixins
     module ArgumentChecks
       def validate_collection_for(collection:, option:)
-        return if collection.blank? || collection.include?(option)
+        return if collection.empty? || collection.include?(option)
 
-        raise InvalidArgumentError, "Invalid argument: must be one of #{collection.join(', ')}."
+        raise RiotApi::InvalidArgument, "Invalid argument: must be one of #{collection.join(', ')}."
       end
     end
   end

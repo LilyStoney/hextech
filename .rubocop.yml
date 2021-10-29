@@ -10,3 +10,7 @@ Layout/EmptyLinesAroundClassBody:
   Supportedstyles:
     - empty_lines
     - no_empty_lines
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'riot_api.gemspec'

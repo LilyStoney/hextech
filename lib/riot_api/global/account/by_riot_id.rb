@@ -3,11 +3,9 @@
 module RiotApi
   module Global
     module Account
-      class ByRiotId < RiotApi::Adapter
+      class ByRiotId < RiotApi::Global::Account::Base
 
-        include Global::Account
-
-        def initialize(game_name:, tag_line:, region: 'europe')
+        def initialize(game_name:, tag_line:, region:)
           @game_name = game_name
           @tag_line = tag_line
           @region = region
@@ -18,14 +16,17 @@ module RiotApi
         attr_reader :game_name, :tag_line, :region
 
         def path
-          "https://#{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{game_name}/#{tag_line}"
+          "https://#{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{clean_name}/#{tag_line}"
         end
 
         def wrap_response(response)
-          Response.with(response.transform_keys { _1.underscore.to_sym })
+          data = format_response(response)
+          RiotApi::Global::Response::Account::ByRiotId.new(data)
         end
 
-        class Response < Value.new(*ResponseAttributes::Account::ByRiotId::ATTRIBUTES); end
+        def clean_name
+          ERB::Util.url_encode(game_name)
+        end
 
       end
     end

@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Clash
-      class BySummonerId < RiotApi::Adapter
+      class BySummonerId < RiotApi::League::Clash::Base
 
-        include League::Clash
-
-        def initialize(summoner_id:, region: 'euw1')
+        def initialize(summoner_id:, region:)
           @summoner_id = summoner_id
           @region = region
         end
@@ -22,11 +20,10 @@ module RiotApi
 
         def wrap_response(response)
           response.map do |player|
-            Response.with(player.transform_keys { _1.underscore.to_sym })
+            data = format_response(player)
+            RiotApi::League::Response::Clash::Player.new(data)
           end
         end
-
-        class Response < Value.new(*ResponseAttributes::Clash::Player::ATTRIBUTES); end
 
       end
     end

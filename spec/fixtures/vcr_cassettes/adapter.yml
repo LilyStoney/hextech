@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.google.com/?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Oct 2021 21:22:12 GMT
+      Expires:
+      - "-1"
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/html; charset=ISO-8859-1
+      P3p:
+      - CP="This is not a P3P policy! See g.co/p3phelp for more info."
+      Server:
+      - gws
+      Content-Length:
+      - '6173'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Set-Cookie:
+      - NID=511=G1pbPFgEIErUgX2TOuao1OzYcHx5PRvL9PFlBnKo9JQ27Otbv7Oac_aMvun-G2tGtcQqnP24xaVg6aMbQh5uZIniilPnbDsn6ZREFqo8VvMBfAfPd0wKqG-Uw5ZLKiIe4zTIz3IOaKdJXqULBoWSy6On-bFc7OI600ge1HBbmJs;
+        expires=Fri, 29-Apr-2022 21:22:12 GMT; path=/; domain=.google.com; HttpOnly
+    body:
+      encoding: ASCII-8BIT
+      string: '{}'
+  recorded_at: Thu, 28 Oct 2021 21:22:12 GMT
+recorded_with: VCR 6.0.0

@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Mastery
-      class TotalScore < RiotApi::Adapter
+      class TotalScore < RiotApi::League::Mastery::Base
 
-        include League::Mastery
-
-        def initialize(summoner_id:, region: 'euw1')
+        def initialize(summoner_id:, region:)
           @summoner_id = summoner_id
           @region = region
         end
@@ -21,10 +19,8 @@ module RiotApi
         end
 
         def wrap_response(response)
-          Response.with(total_score: response.body)
+          OpenStruct.new(total_score: response.body)
         end
-
-        class Response < Value.new(:total_score); end
 
       end
     end

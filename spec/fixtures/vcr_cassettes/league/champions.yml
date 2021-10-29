@@ -1,0 +1,112 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ddragon.leagueoflegends.com/api/versions.json?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD
+      Access-Control-Max-Age:
+      - '3000'
+      Last-Modified:
+      - Tue, 19 Oct 2021 17:58:49 GMT
+      X-Amz-Version-Id:
+      - qHo5x9swo2pGRHXVw_NRA.qw2v3I7rqy
+      Server:
+      - AmazonS3
+      Date:
+      - Sun, 24 Oct 2021 19:46:49 GMT
+      Etag:
+      - W/"e3736bf5d4da528d74a4c0e049d864c9"
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 daf262df3557820c568499be93152238.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR61-C2
+      X-Amz-Cf-Id:
+      - EHU8hA0V81BHa0GnWTYOXW-hdeVUp6Ed-x4CURBZTXLdnpbayyPTYQ==
+      Age:
+      - '274'
+    body:
+      encoding: ASCII-8BIT
+      string: '["11.21.1"]'
+  recorded_at: Sun, 24 Oct 2021 19:48:00 GMT
+- request:
+    method: get
+    uri: https://ddragon.leagueoflegends.com/cdn/11.21.1/data/en_US/champion.json?api_key=RGAPI-example-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD
+      Access-Control-Max-Age:
+      - '3000'
+      Last-Modified:
+      - Tue, 19 Oct 2021 17:52:12 GMT
+      X-Amz-Version-Id:
+      - uY9xMzePU1gXnagmtcMWaW6KOIAAGJB0
+      Server:
+      - AmazonS3
+      Date:
+      - Sun, 24 Oct 2021 19:25:02 GMT
+      Etag:
+      - W/"ffc392ad5c2b6232d5991cb1f1b84cc0"
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9d050fbf11362165fc47c03a14392c36.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR61-C2
+      X-Amz-Cf-Id:
+      - novKo8vwEoWw4My8XZpImt4_GBmDI7W0zAtDO2ABQIl-sWB4Dsk9Qw==
+      Age:
+      - '4142'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyAidHlwZSI6ICJjaGFtcGlvbiIsICJmb3JtYXQiOiAic3RhbmRBbG9uZUNvbXBsZXgiLCAidmVyc2lvbiI6ICIxMS4yMS4xIiwgImRhdGEiOiB7ICJKaW54IjogeyAidmVyc2lvbiI6ICIxMS4yMS4xIiwgImlkIjogIkppbngiLCAia2V5IjogIjIyMiIsICJuYW1lIjogIkppbngiLCAidGl0bGUiOiAidGhlIExvb3NlIENhbm5vbiIsICJibHVyYiI6ICJBIG1hbmljIGFuZCBpbXB1bHNpdmUgY3JpbWluYWwgZnJvbSBaYXVuLCBKaW54IGxpdmVzIHRvIHdyZWFrIGhhdm9jIHdpdGhvdXQgY2FyZSBmb3IgdGhlIGNvbnNlcXVlbmNlcy4gV2l0aCBhbiBhcnNlbmFsIG9mIGRlYWRseSB3ZWFwb25zLCBzaGUgdW5sZWFzaGVzIHRoZSBsb3VkZXN0IGJsYXN0cyBhbmQgYnJpZ2h0ZXN0IGV4cGxvc2lvbnMgdG8gbGVhdmUgYSB0cmFpbCBvZiBtYXloZW0gYW5kIHBhbmljIGluIGhlciB3YWtlLiBKaW54Li4uIiwgImluZm8iOiB7ICJhdHRhY2siOiA5LCAiZGVmZW5zZSI6IDIsICJtYWdpYyI6IDQsICJkaWZmaWN1bHR5IjogNiB9LCAiaW1hZ2UiOiB7ICJmdWxsIjogIkppbngucG5nIiwgInNwcml0ZSI6ICJjaGFtcGlvbjEucG5nIiwgImdyb3VwIjogImNoYW1waW9uIiwgIngiOiA0MzIsICJ5IjogNDgsICJ3IjogNDgsICJoIjogNDggfSwgInRhZ3MiOiBbIk1hcmtzbWFuIl0sICJwYXJ0eXBlIjogIk1hbmEiLCAic3RhdHMiOiB7ICJocCI6IDYxMCwgImhwcGVybGV2ZWwiOiA4NiwgIm1wIjogMjQ1LCAibXBwZXJsZXZlbCI6IDQ1LCAibW92ZXNwZWVkIjogMzI1LCAiYXJtb3IiOiAyNiwgImFybW9ycGVybGV2ZWwiOiAzLjUsICJzcGVsbGJsb2NrIjogMzAsICJzcGVsbGJsb2NrcGVybGV2ZWwiOiAwLjUsICJhdHRhY2tyYW5nZSI6IDUyNSwgImhwcmVnZW4iOiAzLjc1LCAiaHByZWdlbnBlcmxldmVsIjogMC41LCAibXByZWdlbiI6IDYuNywgIm1wcmVnZW5wZXJsZXZlbCI6IDEsICJjcml0IjogMCwgImNyaXRwZXJsZXZlbCI6IDAsICJhdHRhY2tkYW1hZ2UiOiA1NywgImF0dGFja2RhbWFnZXBlcmxldmVsIjogMy40LCAiYXR0YWNrc3BlZWRwZXJsZXZlbCI6IDEsICJhdHRhY2tzcGVlZCI6IDAuNjI1IH0gfSwgIkthaXNhIjogeyAidmVyc2lvbiI6ICIxMS4yMS4xIiwgImlkIjogIkthaXNhIiwgImtleSI6ICIxNDUiLCAibmFtZSI6ICJLYWknU2EiLCAidGl0bGUiOiAiRGF1Z2h0ZXIgb2YgdGhlIFZvaWQiLCAiYmx1cmIiOiAiQ2xhaW1lZCBieSB0aGUgVm9pZCB3aGVuIHNoZSB3YXMgb25seSBhIGNoaWxkLCBLYWknU2EgbWFuYWdlZCB0byBzdXJ2aXZlIHRocm91Z2ggc2hlZXIgdGVuYWNpdHkgYW5kIHN0cmVuZ3RoIG9mIHdpbGwuIEhlciBleHBlcmllbmNlcyBoYXZlIG1hZGUgaGVyIGEgZGVhZGx5IGh1bnRlciBhbmQsIHRvIHNvbWUsIHRoZSBoYXJiaW5nZXIgb2YgYSBmdXR1cmUgdGhleSB3b3VsZCByYXRoZXIgbm90IGxpdmUgdG8gc2VlLiBIYXZpbmcgZW50ZXJlZC4uLiIsICJpbmZvIjogeyAiYXR0YWNrIjogOCwgImRlZmVuc2UiOiA1LCAibWFnaWMiOiAzLCAiZGlmZmljdWx0eSI6IDYgfSwgImltYWdlIjogeyAiZnVsbCI6ICJLYWlzYS5wbmciLCAic3ByaXRlIjogImNoYW1waW9uMS5wbmciLCAiZ3JvdXAiOiAiY2hhbXBpb24iLCAieCI6IDAsICJ5IjogOTYsICJ3IjogNDgsICJoIjogNDggfSwgInRhZ3MiOiBbIk1hcmtzbWFuIl0sICJwYXJ0eXBlIjogIk1hbmEiLCAic3RhdHMiOiB7ICJocCI6IDYwMCwgImhwcGVybGV2ZWwiOiA4OCwgIm1wIjogMzQ0Ljg4LCAibXBwZXJsZXZlbCI6IDM4LCAibW92ZXNwZWVkIjogMzM1LCAiYXJtb3IiOiAyOCwgImFybW9ycGVybGV2ZWwiOiAzLCAic3BlbGxibG9jayI6IDMwLCAic3BlbGxibG9ja3BlcmxldmVsIjogMC41LCAiYXR0YWNrcmFuZ2UiOiA1MjUsICJocHJlZ2VuIjogMy41LCAiaHByZWdlbnBlcmxldmVsIjogMC41NSwgIm1wcmVnZW4iOiA4LjIsICJtcHJlZ2VucGVybGV2ZWwiOiAwLjQ1LCAiY3JpdCI6IDAsICJjcml0cGVybGV2ZWwiOiAwLCAiYXR0YWNrZGFtYWdlIjogNTksICJhdHRhY2tkYW1hZ2VwZXJsZXZlbCI6IDIsICJhdHRhY2tzcGVlZHBlcmxldmVsIjogMS44LCAiYXR0YWNrc3BlZWQiOiAwLjY0NCB9IH0sICJLYWxpc3RhIjogeyAidmVyc2lvbiI6ICIxMS4yMS4xIiwgImlkIjogIkthbGlzdGEiLCAia2V5IjogIjQyOSIsICJuYW1lIjogIkthbGlzdGEiLCAidGl0bGUiOiAidGhlIFNwZWFyIG9mIFZlbmdlYW5jZSIsICJibHVyYiI6ICJBIHNwZWN0ZXIgb2Ygd3JhdGggYW5kIHJldHJpYnV0aW9uLCBLYWxpc3RhIGlzIHRoZSB1bmR5aW5nIHNwaXJpdCBvZiB2ZW5nZWFuY2UsIGFuIGFybW9yZWQgbmlnaHRtYXJlIHN1bW1vbmVkIGZyb20gdGhlIFNoYWRvdyBJc2xlcyB0byBodW50IGRlY2VpdmVycyBhbmQgdHJhaXRvcnMuIFRoZSBiZXRyYXllZCBtYXkgY3J5IG91dCBpbiBibG9vZCB0byBiZSBhdmVuZ2VkLCBidXQgS2FsaXN0YSBvbmx5IGFuc3dlcnMgdGhvc2Ugd2lsbGluZy4uLiIsICJpbmZvIjogeyAiYXR0YWNrIjogOCwgImRlZmVuc2UiOiAyLCAibWFnaWMiOiA0LCAiZGlmZmljdWx0eSI6IDcgfSwgImltYWdlIjogeyAiZnVsbCI6ICJLYWxpc3RhLnBuZyIsICJzcHJpdGUiOiAiY2hhbXBpb24xLnBuZyIsICJncm91cCI6ICJjaGFtcGlvbiIsICJ4IjogNDgsICJ5IjogOTYsICJ3IjogNDgsICJoIjogNDggfSwgInRhZ3MiOiBbIk1hcmtzbWFuIl0sICJwYXJ0eXBlIjogIk1hbmEiLCAic3RhdHMiOiB7ICJocCI6IDUzNCwgImhwcGVybGV2ZWwiOiAxMDAsICJtcCI6IDI1MCwgIm1wcGVybGV2ZWwiOiA0NSwgIm1vdmVzcGVlZCI6IDMyNSwgImFybW9yIjogMjEsICJhcm1vcnBlcmxldmVsIjogNCwgInNwZWxsYmxvY2siOiAzMCwgInNwZWxsYmxvY2twZXJsZXZlbCI6IDAuNSwgImF0dGFja3JhbmdlIjogNTI1LCAiaHByZWdlbiI6IDMuNzUsICJocHJlZ2VucGVybGV2ZWwiOiAwLjU1LCAibXByZWdlbiI6IDYuMywgIm1wcmVnZW5wZXJsZXZlbCI6IDAuNCwgImNyaXQiOiAwLCAiY3JpdHBlcmxldmVsIjogMCwgImF0dGFja2RhbWFnZSI6IDY5LCAiYXR0YWNrZGFtYWdlcGVybGV2ZWwiOiAzLjUsICJhdHRhY2tzcGVlZHBlcmxldmVsIjogNCwgImF0dGFja3NwZWVkIjogMC42OTQgfSB9IH0gfQ==
+  recorded_at: Sun, 24 Oct 2021 19:48:01 GMT
+recorded_with: VCR 6.0.0

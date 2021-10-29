@@ -4,8 +4,6 @@ module RiotApi
   module Valorant
     class Status < RiotApi::Adapter
 
-      include RiotApi::Valorant::ResponseAttributes
-
       REGIONS = %w[ap br eu kr latam na].freeze
 
       def initialize(region: 'eu')
@@ -26,10 +24,10 @@ module RiotApi
       end
 
       def wrap_response(response)
-        Response.with(response.transform_keys { _1.underscore.to_sym })
+        data = format_response(response)
+        RiotApi::Valorant::Response::Status.new(data)
       end
 
-      class Response < Value.new(*ResponseAttributes::Status::ATTRIBUTES); end
     end
   end
 end

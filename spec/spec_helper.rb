@@ -1,8 +1,18 @@
 # frozen_string_literal: true
 
-require 'bundler/setup'
+require 'simplecov'
+
+SimpleCov.start
+
 require 'riot_api'
+require 'bundler/setup'
+require 'httparty'
+require 'webmock'
+require 'climate_control'
+require 'vcr'
 require 'pry'
+
+ENV['RIOT_API_KEY'] = 'RGAPI-example-api-key'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -14,4 +24,10 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
 end

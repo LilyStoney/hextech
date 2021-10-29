@@ -3,11 +3,9 @@
 module RiotApi
   module League
     module Mastery
-      class ByChampion < RiotApi::Adapter
+      class ByChampion < RiotApi::League::Mastery::Base
 
-        include League::Mastery
-
-        def initialize(summoner_id:, champion_id:, region: 'euw1')
+        def initialize(summoner_id:, champion_id:, region:)
           @summoner_id = summoner_id
           @champion_id = champion_id
           @region = region
@@ -23,7 +21,8 @@ module RiotApi
         end
 
         def wrap_response(response)
-          Response.with(response.transform_keys { _1.underscore.to_sym })
+          data = format_response(response)
+          RiotApi::League::Response::Mastery.new(data)
         end
 
       end

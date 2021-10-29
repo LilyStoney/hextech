@@ -4,6 +4,7 @@ module RiotApi
   class Adapter
 
     include RiotApi::Mixins::ArgumentChecks
+    include RiotApi::Mixins::TransformKeys
 
     class << self
 
@@ -29,6 +30,10 @@ module RiotApi
     end
 
     private
+
+    def format_response(response)
+      response.to_symbolized_snake_keys
+    end
 
     def params
       return @params if defined?(@params)
