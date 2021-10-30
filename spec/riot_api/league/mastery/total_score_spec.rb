@@ -9,9 +9,7 @@ RSpec.describe RiotApi::League::Mastery::TotalScore do
 
   describe '.call' do
     it 'returns a response object' do
-      response = OpenStruct.new(total_score: '100')
-
-      expect(subject).to eq(response)
+      expect(subject).to eq(100)
     end
   end
 end

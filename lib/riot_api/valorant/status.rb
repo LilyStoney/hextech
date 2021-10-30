@@ -8,26 +8,31 @@ module RiotApi
 
       def initialize(region: 'eu')
         @region = region
+
+        super()
       end
 
       def call
         validate_collection_for(collection: REGIONS, option: region)
-        wrap_response(send_request)
+
+        super
       end
 
       private
 
       attr_reader :region
 
+      def host
+        "https://#{region}.api.riotgames.com"
+      end
+
       def path
-        "https://#{region}.api.riotgames.com/val/status/v1/platform-data"
+        '/val/status/v1/platform-data'
       end
 
-      def wrap_response(response)
-        data = format_response(response)
-        RiotApi::Valorant::Response::Status.new(data)
+      def response_class
+        RiotApi::Valorant::Response::Status
       end
-
     end
   end
 end

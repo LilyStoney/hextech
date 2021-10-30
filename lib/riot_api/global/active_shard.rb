@@ -11,12 +11,15 @@ module RiotApi
         @game = game
         @puuid = puuid
         @region = region
+
+        super()
       end
 
       def call
         validate_collection_for(collection: REGIONS, option: region)
         validate_collection_for(collection: GAMES, option: game)
-        wrap_response(send_request)
+
+        super
       end
 
       private
@@ -24,12 +27,15 @@ module RiotApi
       attr_reader :game, :puuid, :region
 
       def path
-        "https://#{region}.api.riotgames.com/riot/account/v1/active-shards/by-game/#{game}/by-puuid/#{puuid}"
+        "/riot/account/v1/active-shards/by-game/#{game}/by-puuid/#{puuid}"
       end
 
-      def wrap_response(response)
-        data = format_response(response)
-        RiotApi::Global::Response::ActiveShard.new(data)
+      def host
+        "https://#{region}.api.riotgames.com"
+      end
+
+      def response_class
+        RiotApi::Global::Response::ActiveShard
       end
 
     end

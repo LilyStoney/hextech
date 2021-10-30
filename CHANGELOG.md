@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.0.1] - 2021-08-24
+## [1.0.0] - 2021-08-24
 
 ### Added
 
@@ -50,4 +50,4 @@ All notable changes to this project will be documented in this file.
     - VAL-STATUS-V1
       - `Status`
 
-[0.0.1]: https://github.com/lilystoney/riot_api/releases/tag/v0.0.1
+[1.0.0]: https://github.com/lilystoney/riot_api/releases/tag/v1.0.0

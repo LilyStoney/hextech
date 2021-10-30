@@ -2,31 +2,27 @@
 
 RSpec.describe RiotApi::League::ThirdPartyCode, vcr: true do
   describe '.call' do
-    context 'a successful response' do
+    context 'when a third party code is set' do
       subject do
         VCR.use_cassette('league/third_party_code/success') do
           described_class.call(summoner_id: '1234', region: 'euw1')
         end
       end
 
-      context 'when a third party code has been applied' do
-        it 'returns a third party code string' do
-          expect(subject).to eq('Example Third Party Code')
-        end
+      it 'returns a third party code string' do
+        expect(subject).to eq('Example Third Party Code')
       end
     end
 
-    context 'a not found response' do
+    context 'when no third party code is set' do
       subject do
         VCR.use_cassette('league/third_party_code/not_found') do
           described_class.call(summoner_id: '1234', region: 'euw1')
         end
       end
 
-      context 'when a third party code has been applied' do
-        it 'returns a third party code string' do
-          expect { subject }.to raise_error(RiotApi::NotFound, 'Resource not found.')
-        end
+      it 'returns an empty string' do
+        expect(subject).to be_empty
       end
     end
   end

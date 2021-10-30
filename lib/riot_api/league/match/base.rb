@@ -9,7 +9,14 @@ module RiotApi
 
         def call
           validate_collection_for(collection: REGIONS, option: region)
-          send_request
+
+          super
+        end
+
+        private
+
+        def host
+          "https://#{region}.api.riotgames.com"
         end
 
       end

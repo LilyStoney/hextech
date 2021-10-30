@@ -8,24 +8,30 @@ module RiotApi
 
       def initialize(region: 'euw1')
         @region = region
+
+        super()
       end
 
       def call
         validate_collection_for(collection: REGIONS, option: region)
-        wrap_response(send_request)
+
+        super
       end
 
       private
 
       attr_reader :region
 
-      def path
-        "https://#{region}.api.riotgames.com/lol/status/v4/platform-data"
+      def host
+        "https://#{region}.api.riotgames.com"
       end
 
-      def wrap_response(response)
-        data = format_response(response)
-        RiotApi::League::Response::Status.new(data)
+      def path
+        '/lol/status/v4/platform-data'
+      end
+
+      def response_class
+        RiotApi::League::Response::Status
       end
 
     end

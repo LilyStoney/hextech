@@ -8,13 +8,11 @@ RSpec.describe RiotApi::League::Match::ByMatchId, vcr: true do
   end
 
   let(:response_file) { File.read('spec/fixtures/json/truncated_match_response.json') }
-  let(:parsed_expectation) { JSON.parse(response_file) }
+  let(:parsed_expectation) { JSON.parse(response_file).to_symbolized_snake_keys }
 
   describe '.call' do
     it 'returns a match response' do
-      parsed_response = JSON.parse(subject.body)
-
-      expect(parsed_response).to eq(parsed_expectation)
+      expect(subject).to eq(parsed_expectation)
     end
   end
 end

@@ -6,7 +6,7 @@ SimpleCov.start
 
 require 'riot_api'
 require 'bundler/setup'
-require 'httparty'
+require 'faraday'
 require 'webmock'
 require 'climate_control'
 require 'vcr'

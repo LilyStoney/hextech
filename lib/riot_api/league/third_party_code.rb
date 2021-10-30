@@ -9,24 +9,26 @@ module RiotApi
       def initialize(summoner_id:, region: 'euw1')
         @summoner_id = summoner_id
         @region = region
+
+        super()
       end
 
       def call
         validate_collection_for(collection: REGIONS, option: region)
 
-        response = send_request
-
-        raise ThirdPartyCodeError, 'There is no code for the given summoner or it expired' if response.not_found?
-
-        response.body
+        super
       end
 
       private
 
       attr_reader :summoner_id, :region
 
+      def host
+        "https://#{region}.api.riotgames.com"
+      end
+
       def path
-        "https://#{region}.api.riotgames.com/lol/platform/v4/third-party-code/by-summoner/#{summoner_id}"
+        "/lol/platform/v4/third-party-code/by-summoner/#{summoner_id}"
       end
 
     end

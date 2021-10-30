@@ -8,6 +8,8 @@ module RiotApi
         def initialize(puuid:, region:)
           @puuid = puuid
           @region = region
+
+          super()
         end
 
         private
@@ -15,12 +17,11 @@ module RiotApi
         attr_reader :puuid, :region
 
         def path
-          "https://#{region}.api.riotgames.com/riot/account/v1/accounts/by-puuid/#{puuid}"
+          "/riot/account/v1/accounts/by-puuid/#{puuid}"
         end
 
-        def wrap_response(response)
-          data = format_response(response)
-          RiotApi::Global::Response::Account::ByPuuid.new(data)
+        def response_class
+          RiotApi::Global::Response::Account::ByPuuid
         end
 
       end

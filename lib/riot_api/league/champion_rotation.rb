@@ -8,22 +8,30 @@ module RiotApi
 
       def initialize(region: 'euw1')
         @region = region
+
+        super()
       end
 
       def call
         validate_collection_for(collection: REGIONS, option: region)
 
-        response = format_response(send_request)
-
-        RiotApi::League::Response::ChampionRotation.new(response)
+        super
       end
 
       private
 
       attr_reader :region
 
+      def host
+        "https://#{region}.api.riotgames.com"
+      end
+
       def path
-        "https://#{region}.api.riotgames.com/lol/platform/v3/champion-rotations"
+        '/lol/platform/v3/champion-rotations'
+      end
+
+      def response_class
+        RiotApi::League::Response::ChampionRotation
       end
 
     end

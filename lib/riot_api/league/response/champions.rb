@@ -54,7 +54,6 @@ module RiotApi
           attribute :attackspeedperlevel, Types::Coercible::Float
           attribute :attackspeed, Types::Coercible::Float
         end
-
       end
     end
   end

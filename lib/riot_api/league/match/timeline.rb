@@ -8,6 +8,8 @@ module RiotApi
         def initialize(match_id:, region:)
           @match_id = match_id
           @region = region
+
+          super()
         end
 
         private
@@ -15,7 +17,7 @@ module RiotApi
         attr_reader :match_id, :region
 
         def path
-          "https://#{region}.api.riotgames.com/lol/match/v5/matches/#{match_id}/timeline"
+          "/lol/match/v5/matches/#{match_id}/timeline"
         end
 
       end
