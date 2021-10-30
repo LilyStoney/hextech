@@ -8,6 +8,8 @@ module RiotApi
         def initialize(name:, region:)
           @name = name
           @region = region
+
+          super()
         end
 
         private
@@ -15,7 +17,7 @@ module RiotApi
         attr_reader :name, :region
 
         def path
-          "https://#{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/#{clean_name}"
+          "/lol/summoner/v4/summoners/by-name/#{clean_name}"
         end
 
         def clean_name

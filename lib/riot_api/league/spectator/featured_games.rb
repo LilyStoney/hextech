@@ -7,6 +7,8 @@ module RiotApi
 
         def initialize(region:)
           @region = region
+
+          super()
         end
 
         private
@@ -14,12 +16,11 @@ module RiotApi
         attr_reader :region
 
         def path
-          "https://#{region}.api.riotgames.com/lol/spectator/v4/featured-games"
+          '/lol/spectator/v4/featured-games'
         end
 
-        def wrap_response(response)
-          data = format_response(response)
-          RiotApi::League::Response::FeaturedGames.new(data)
+        def response_class
+          RiotApi::League::Response::FeaturedGames
         end
 
       end

@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths               = ['lib']
 
   spec.add_dependency 'dry-struct'
-  spec.add_dependency 'httparty'
+  spec.add_dependency 'faraday'
 
   spec.add_development_dependency 'climate_control'
   spec.add_development_dependency 'pry', '~> 0.13.1'

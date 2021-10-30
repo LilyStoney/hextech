@@ -4,41 +4,34 @@ module RiotApi
   class Adapter
 
     include RiotApi::Mixins::ArgumentChecks
-    include RiotApi::Mixins::TransformKeys
+    include RiotApi::Mixins::Callable
 
-    class << self
-
-      def call(...)
-        new(...).call
-      end
-
+    def initialize
+      @connection = RiotApi::SendRequest.new(host: host, api_key: api_key)
     end
 
-    def send_request
-      raise ApiKeyMissing if api_key.nil?
-
-      response = HTTParty.get(
-        path,
-        { query: params.merge(api_key: api_key) }
-      )
-
-      raise Forbidden if response.forbidden?
-      raise NotFound if response.not_found?
-      raise ServerError if response.server_error?
-
-      response
+    def call
+      connection
+        .call(path)
+        .then { |response| wrap_response(response, response_class) }
     end
 
     private
 
-    def format_response(response)
-      response.to_symbolized_snake_keys
+    attr_reader :connection
+
+    def wrap_response(response, response_class)
+      RiotApi::Response.new(response.body, response_class).call
     end
 
-    def params
-      return @params if defined?(@params)
+    def response_class
+      return unless defined?(@response_class)
 
-      {}
+      @response_class
+    end
+
+    def host
+      raise NotImplementedError, 'Missing host attribute'
     end
 
     def path
@@ -46,7 +39,7 @@ module RiotApi
     end
 
     def api_key
-      @api_key ||= ENV['RIOT_API_KEY']
+      @api_key ||= ENV.fetch('RIOT_API_KEY')
     end
 
   end

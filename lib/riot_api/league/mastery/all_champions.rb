@@ -8,6 +8,8 @@ module RiotApi
         def initialize(summoner_id:, region:)
           @summoner_id = summoner_id
           @region = region
+
+          super()
         end
 
         private
@@ -15,14 +17,11 @@ module RiotApi
         attr_reader :summoner_id, :region
 
         def path
-          "https://#{region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/#{summoner_id}"
+          "/lol/champion-mastery/v4/champion-masteries/by-summoner/#{summoner_id}"
         end
 
-        def wrap_response(response)
-          response.map do |mastery|
-            data = format_response(mastery)
-            RiotApi::League::Response::Mastery.new(data)
-          end
+        def response_class
+          RiotApi::League::Response::Mastery
         end
 
       end

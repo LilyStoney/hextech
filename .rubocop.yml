@@ -14,3 +14,4 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'riot_api.gemspec'
+    - 'lib/riot_api/**/response/*'

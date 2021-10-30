@@ -30,11 +30,10 @@ RSpec.describe RiotApi::League::Mastery do
   describe '#timeline' do
     subject { described_class.total_score(params) }
 
-    let(:response) { OpenStruct.new(total_score: '100') }
     let(:params) { { summoner_id: '1234', region: 'euw1' } }
 
     it 'returns a Mastery response object' do
-      expect(RiotApi::League::Mastery::TotalScore).to receive(:call).with(params).and_return(response)
+      expect(RiotApi::League::Mastery::TotalScore).to receive(:call).with(params).and_return(100)
 
       subject
     end

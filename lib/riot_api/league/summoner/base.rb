@@ -9,14 +9,18 @@ module RiotApi
 
         def call
           validate_collection_for(collection: REGIONS, option: region)
-          wrap_response(send_request)
+
+          super
         end
 
         private
 
-        def wrap_response(response)
-          data = format_response(response)
-          RiotApi::League::Response::Summoner.new(data)
+        def host
+          "https://#{region}.api.riotgames.com"
+        end
+
+        def response_class
+          RiotApi::League::Response::Summoner
         end
 
       end

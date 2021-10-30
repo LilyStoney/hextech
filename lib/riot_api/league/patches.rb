@@ -5,17 +5,17 @@ module RiotApi
     class Patches < RiotApi::Adapter
 
       def latest
-        send_request.first
-      end
-
-      def previous
-        send_request[1]
+        call.first
       end
 
       private
 
+      def host
+        'https://ddragon.leagueoflegends.com'
+      end
+
       def path
-        'https://ddragon.leagueoflegends.com/api/versions.json'
+        '/api/versions.json'
       end
 
     end

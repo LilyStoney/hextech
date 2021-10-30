@@ -8,6 +8,8 @@ module RiotApi
         def initialize(tournament_id:, region:)
           @tournament_id = tournament_id
           @region = region
+
+          super()
         end
 
         private
@@ -15,12 +17,11 @@ module RiotApi
         attr_reader :tournament_id, :region
 
         def path
-          "https://#{region}.api.riotgames.com/lol/clash/v1/tournaments/#{tournament_id}"
+          "/lol/clash/v1/tournaments/#{tournament_id}"
         end
 
-        def wrap_response(response)
-          data = format_response(response)
-          RiotApi::League::Response::Clash::Tournament.new(data)
+        def response_class
+          RiotApi::League::Response::Clash::Tournament
         end
 
       end

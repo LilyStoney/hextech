@@ -8,6 +8,8 @@ module RiotApi
         def initialize(summoner_id:, region:)
           @summoner_id = summoner_id
           @region = region
+
+          super()
         end
 
         private
@@ -15,12 +17,11 @@ module RiotApi
         attr_reader :summoner_id, :region
 
         def path
-          "https://#{region}.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/#{summoner_id}"
+          "/lol/spectator/v4/active-games/by-summoner/#{summoner_id}"
         end
 
-        def wrap_response(response)
-          data = format_response(response)
-          RiotApi::League::Response::ActiveGames.new(data)
+        def response_class
+          RiotApi::League::Response::ActiveGames
         end
 
       end

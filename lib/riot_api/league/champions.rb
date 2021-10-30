@@ -6,26 +6,28 @@ module RiotApi
 
       def initialize
         @latest_patch = RiotApi::League::Patches.new.latest
+
+        super()
       end
 
       def call
-        response = format_response(send_request)
+        response = super
 
-        wrap_response(response)
+        response[:data].each_with_object({}) do |(champion, data), hash|
+          hash[champion] = RiotApi::League::Response::Champions.new(data)
+        end
       end
 
       private
 
       attr_reader :latest_patch
 
-      def path
-        "https://ddragon.leagueoflegends.com/cdn/#{latest_patch}/data/en_US/champion.json"
+      def host
+        'https://ddragon.leagueoflegends.com'
       end
 
-      def wrap_response(response)
-        response[:data].map do |_champion, data|
-          RiotApi::League::Response::Champions.new(data)
-        end
+      def path
+        "/cdn/#{latest_patch}/data/en_US/champion.json"
       end
 
     end
