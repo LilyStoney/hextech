@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ddragon.leagueoflegends.com/api/versions.json?api_key=RGAPI-example-api-key
+    uri: https://ddragon.leagueoflegends.com/api/versions.json
     body:
       encoding: US-ASCII
       string: ''

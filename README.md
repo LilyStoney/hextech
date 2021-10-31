@@ -1,4 +1,4 @@
-![Riot API Logo](./docs/logo.png)
+![Hextech Logo](./docs/logo.png)
 
 Ruby wrapper for Riot Api endpoints.
 
@@ -7,7 +7,7 @@ Ruby wrapper for Riot Api endpoints.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'riot_api'
+gem 'hextech'
 ```
 
 And then execute:
@@ -28,9 +28,9 @@ Each Riot API endpoint has been namespaced by game, endpoint grouping, and (if p
 ```ruby
 # Example:
 
-RiotApi::League::Summoner.by_name(name: 'Example Summoner', region: 'euw1')
+Hextech::League::Summoner.by_name(name: 'Example Summoner', region: 'euw1')
 ```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/lilystoney/riot_api.
+Bug reports and pull requests are welcome on GitHub at https://github.com/lilystoney/hextech.

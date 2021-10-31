@@ -4,7 +4,7 @@ require 'simplecov'
 
 SimpleCov.start
 
-require 'riot_api'
+require 'hextech'
 require 'bundler/setup'
 require 'faraday'
 require 'webmock'
@@ -15,6 +15,8 @@ require 'pry'
 ENV['RIOT_API_KEY'] = 'RGAPI-example-api-key'
 
 RSpec.configure do |config|
+  config.before { allow($stdout).to receive(:write) }
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

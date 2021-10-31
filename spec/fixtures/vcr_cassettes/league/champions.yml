@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ddragon.leagueoflegends.com/api/versions.json?api_key=RGAPI-example-api-key
+    uri: https://ddragon.leagueoflegends.com/api/versions.json
     body:
       encoding: US-ASCII
       string: ''
@@ -56,7 +56,7 @@ http_interactions:
   recorded_at: Sun, 24 Oct 2021 19:48:00 GMT
 - request:
     method: get
-    uri: https://ddragon.leagueoflegends.com/cdn/11.21.1/data/en_US/champion.json?api_key=RGAPI-example-api-key
+    uri: https://ddragon.leagueoflegends.com/cdn/11.21.1/data/en_US/champion.json
     body:
       encoding: US-ASCII
       string: ''

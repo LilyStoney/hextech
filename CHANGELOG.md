@@ -50,4 +50,4 @@ All notable changes to this project will be documented in this file.
     - VAL-STATUS-V1
       - `Status`
 
-[1.0.0]: https://github.com/lilystoney/riot_api/releases/tag/v1.0.0
+[1.0.0]: https://github.com/lilystoney/hextech/releases/tag/v1.0.0
