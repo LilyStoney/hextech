@@ -3,6 +3,8 @@
 module Hextech
   class SendRequest
 
+    STATIC_HOST = 'https://ddragon.leagueoflegends.com'
+
     def initialize(host:, api_key:)
       @host = host
       @api_key = api_key
@@ -15,6 +17,10 @@ module Hextech
     private
 
     attr_reader :host, :api_key
+
+    def static_data?
+      STATIC_HOST == host
+    end
 
     def logger_settings
       { headers: enable_logger?, bodies: enable_logger? }
