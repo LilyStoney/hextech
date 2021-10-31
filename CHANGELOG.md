@@ -6,12 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- League endpoints
+- Global endpoints
   - API
     - ACCOUNT-V1
-      - `ByPUUID`
+      - `ByPuuid`
       - `ByRiotId`
       - `ActiveShard`
+
+- League endpoints
+  - API
     - CHAMPION-MASTERY-V4
       - `AllChampions`
       - `ByChampion`
@@ -24,8 +27,6 @@ All notable changes to this project will be documented in this file.
       - `ByTournamentId`
       - `TeamByTeamId`
       - `TournamentByTeamId`
-    - LEAGUE-V4
-      - `ByQueue`
     - LOL-STATUS-V4
       - `Status`
     - MATCH-V5
