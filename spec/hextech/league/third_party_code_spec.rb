@@ -22,7 +22,9 @@ RSpec.describe Hextech::League::ThirdPartyCode, vcr: true do
       end
 
       it 'returns an empty string' do
-        expect(subject).to be_empty
+        expect { subject }.to raise_error(
+          Hextech::NotFound, 'Resource not found.'
+        )
       end
     end
   end

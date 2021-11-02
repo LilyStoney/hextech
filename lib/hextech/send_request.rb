@@ -22,10 +22,6 @@ module Hextech
       STATIC_HOST == host
     end
 
-    def logger_settings
-      { headers: enable_logger?, bodies: enable_logger? }
-    end
-
     def enable_logger?
       ENV.fetch('DEBUG_LOGGER', 'false') == 'true'
     end
@@ -33,8 +29,12 @@ module Hextech
     def client
       Faraday.new(url: host) do |faraday|
         faraday.params['api_key'] = api_key unless static_data?
-        faraday.response :logger, nil, **logger_settings do |logger|
-          logger.filter(/(api_key=)([a-zA-Z0-9-]*)/, '\1[REMOVED]')
+        faraday.use Hextech::Errors
+
+        if enable_logger?
+          faraday.response :logger, nil, { headers: true, bodies: true } do |logger|
+            logger.filter(/(api_key=)([a-zA-Z0-9-]*)/, '\1[REMOVED]')
+          end
         end
       end
     end
