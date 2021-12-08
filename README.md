@@ -1,6 +1,6 @@
 ![Hextech Logo](./docs/logo.png)
 
-Ruby wrapper for Riot Api endpoints.
+Simply a Ruby wrapper for Riot Api endpoints.
 
 ## Installation
 
@@ -23,7 +23,7 @@ You'll need the following environment variable:
 RIOT_API_KEY='code-goes-here'
 ```
 
-Each Riot API endpoint has been namespaced by game, endpoint grouping, and (if present) specific endpoint. They get wrapped in a `Dry::Struct` with keys that have been converted to snake case.
+Each Riot API endpoint integrated into the gem has been namespaced by game, endpoint grouping, and (if present) specific endpoint. The responses to these endpoints will be wrapped in a `Dry::Struct` with keys that have been converted to snake case.
 
 ```ruby
 # Example:
@@ -37,9 +37,9 @@ summoner.name
 
 ## API Logging
 
-Logging is suppressed by default, with only the basic `INFO` logs being included (i.e. the endpoint being hit and the status response code.) As standard, the API Key query parameter will be redacted from the logs.
+Whenever the API Key is logged to the console, it will be replaced with `[REPLACED]`.
 
-In order to increase the logging level to `DEBUG`, use the following environment variable:
+Logging is suppressed by default. In order to increase the logging level to `DEBUG`, use the following environment variable:
 
 ```
 DEBUG_LOGGER=true

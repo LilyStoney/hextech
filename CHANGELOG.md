@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
     - CHAMPION-MASTERY-V4
       - `AllChampions`
       - `ByChampion`
-      - `TotalScore
+      - `TotalScore`
     - CHAMPION-V3
       - `ChampionRotation`
     - CLASH-V1
